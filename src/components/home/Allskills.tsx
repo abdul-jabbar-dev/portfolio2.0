@@ -15,7 +15,7 @@ export default function AllSkills({
     <div>
       <details
         open={id === 0}
-        className="open:bg-white my-2 ring-1 ring-black/5  open:shadow-lg p-6 rounded-lg"
+        className="open:bg-white my-2 ring-1 ring-black/5  open:shadow-lg p-6  rounded-xl"
       >
         <summary className="cursor-pointer text-sm leading-6 text-slate-900  font-semibold select-none">
           <span className="text-2xl uppercase relative   text-slate-900">
@@ -65,7 +65,7 @@ export default function AllSkills({
                 >
                   {
                     <Image
-                      className="mx-auto py-2"
+                      className="mx-auto cursor-pointer" 
                       width="24"
                       height="24"
                       src={

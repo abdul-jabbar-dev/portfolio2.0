@@ -1,4 +1,5 @@
 import AboutMe from "@/components/home/AboutMe";
+import Projects from "@/components/home/Projects";
 import ShortDescription from "@/components/home/ShortDescription";
 import Skills from "@/components/home/Skills";
 import RootNav from "@/sheard/navbar/RootNav";
@@ -12,6 +13,7 @@ const Home: PageWithLayout = () => {
       <ShortDescription />
       <AboutMe />
       <Skills />
+      <Projects />
     </>
   );
 };

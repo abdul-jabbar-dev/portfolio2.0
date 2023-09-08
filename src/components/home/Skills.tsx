@@ -1,6 +1,6 @@
 import React from "react";
 import TSkill from "@/types/documents/skills";
-import AllSkills from "./skills/Allskills";
+import AllSkills from "./Allskills";
 
 export default function Skills() {
   const [allSkills, setAllskills] = React.useState<TSkill[]>([]);
