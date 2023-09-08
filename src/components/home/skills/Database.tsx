@@ -1,58 +1,40 @@
 import Image from "next/image";
 import React from "react";
 
-export default function BackEnd() {
+export default function Database() {
   let skills = [
     {
       name: "HTML",
-      icon: "https://img.icons8.com/fluency/80/node-js.png",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Utfugit nulla pariatur enim ducimus dolor.",
-      level: "80",
-      link: "",
-      category: "backend",
-    },
-    {
-      name: "CSS",
-      icon: "https://img.icons8.com/ios/80/express-js.png",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Utfugit nulla pariatur enim ducimus dolor.",
-      level: "65",
-      link: "",
-      category: "backend",
-    },
-    {
-      name: "CSS",
-      icon: "https://img.icons8.com/color/80fluency/80/nextjs.png",
+      icon: "https://img.icons8.com/color/80/mongodb.png",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Utfugit nulla pariatur enim ducimus dolor.",
       level: "60",
       link: "",
-      category: "backend",
+      category: "database",
     },
     {
       name: "CSS",
-      icon: "https://img.icons8.com/color/80/mongoose.png",
+      icon: "https://img.icons8.com/color/80/postgreesql.png",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Utfugit nulla pariatur enim ducimus dolor.",
       level: "60",
       link: "",
-      category: "backend",
+      category: "database",
     },
     {
       name: "CSS",
-      icon: "https://img.icons8.com/color/80/prisma-orm.png",
+      icon: "https://img.icons8.com/color/80/mysql-logo.png",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Utfugit nulla pariatur enim ducimus dolor.",
       level: "60",
       link: "",
-      category: "backend",
+      category: "database",
     },
   ];
   return (
     <div>
       <div className="text-3xl font-bold text-slate-900">
-        BackEnd <span className="text-xl text-green-900">60%</span>
+        Database <span className="text-xl text-green-900">60%</span>
       </div>
       <div>
         <p className="my-3">

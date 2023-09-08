@@ -1,0 +1,165 @@
+[
+  {
+    "name": "HTML5",
+    "icon": "https://img.icons8.com/color/80/html-5.png",
+    "alt": "HTML5 Icon",
+    "description": "HTML5 introduces modern features and elements for web content and applications.",
+    "level": "90",
+    "link": "https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5",
+    "category": "frontend"
+  },
+  {
+    "name": "CSS3",
+    "icon": "https://img.icons8.com/color/80/css3.png",
+    "alt": "CSS3 Icon",
+    "description": "CSS3 enhances web styling capabilities with animations, gradients, and more.",
+    "level": "65",
+    "link": "https://developer.mozilla.org/en-US/docs/Archive/CSS3",
+    "category": "frontend"
+  },
+  {
+    "name": "Tailwind CSS",
+    "icon": "https://img.icons8.com/color/80/tailwindcss.png",
+    "alt": "Tailwind CSS Icon",
+    "description": "Tailwind CSS offers utility classes for rapid and maintainable frontend development.",
+    "level": "75",
+    "link": "https://tailwindcss.com/",
+    "category": "frontend"
+  },
+  {
+    "name": "JavaScript",
+    "icon": "https://img.icons8.com/color/80/javascript--v1.png",
+    "alt": "JavaScript Icon",
+    "description": "JavaScript adds interactivity and dynamic behavior to web pages.",
+    "level": "85",
+    "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+    "category": "frontend"
+  },
+  {
+    "name": "TypeScript",
+    "icon": "https://img.icons8.com/color/80/typescript.png",
+    "alt": "TypeScript Icon",
+    "description": "TypeScript brings static typing and improved tooling to JavaScript development.",
+    "level": "70",
+    "link": "https://www.typescriptlang.org/",
+    "category": "frontend"
+  },
+  {
+    "name": "React.Js",
+    "icon": "https://img.icons8.com/color/80/react-native.png",
+    "alt": "React Icon",
+    "description": "React.js is a leading UI library for web apps. It streamlines UI development and flexibility for dynamic websites.",
+    "level": "90",
+    "link": "https://reactnative.dev/",
+    "category": "frontend"
+  },
+  {
+    "name": "Next.js",
+    "icon": "https://img.icons8.com/color/80fluency/80/nextjs.png",
+    "alt": "Next.js Icon",
+    "description": "Next.js simplifies server-rendered React app development.",
+    "level": "70",
+    "link": "https://nextjs.org/",
+    "category": "frontend"
+  },
+  {
+    "name": "Redux",
+    "icon": "https://img.icons8.com/color/80fluency/80/redux.png",
+    "alt": "Redux Icon",
+    "description": "Redux manages the state and data flow of React applications.",
+    "level": "75",
+    "link": "https://redux.js.org/",
+    "category": "frontend"
+  },
+  {
+    "name": "Node.js",
+    "icon": "https://img.icons8.com/fluency/80/node-js.png",
+    "alt": "Node.js Icon",
+    "description": "Node.js is a powerful runtime for server-side JavaScript, ideal for building scalable backend applications.",
+    "level": "70",
+    "link": "https://nodejs.org/",
+    "category": "backend"
+  },
+  {
+    "name": "Express.js",
+    "icon": "https://img.icons8.com/ios/80/express-js.png",
+    "alt": "Express.js Icon",
+    "description": "Express.js is a Node.js web application framework simplifying API and web app development.",
+    "level": "80",
+    "link": "https://expressjs.com/",
+    "category": "backend"
+  },
+  {
+    "name": "Next.js",
+    "icon": "https://img.icons8.com/color/80/nextjs.png",
+    "alt": "Next.js Icon",
+    "description": "Next.js simplifies React app development with server-side rendering and routing features.",
+    "level": "65",
+    "link": "https://nextjs.org/",
+    "category": "backend"
+  },
+  {
+    "name": "Mongoose",
+    "icon": "https://img.icons8.com/color/80/mongoose.png",
+    "alt": "Mongoose Icon",
+    "description": "Mongoose facilitates MongoDB data modeling and interaction for Node.js applications.",
+    "level": "70",
+    "link": "https://mongoosejs.com/",
+    "category": "backend"
+  },
+  {
+    "name": "Prisma ORM",
+    "icon": "https://img.icons8.com/color/80/prisma-orm.png",
+    "alt": "Prisma ORM Icon",
+    "description": "Prisma ORM provides a type-safe database query builder and schema management.",
+    "level": "70",
+    "link": "https://www.prisma.io/",
+    "category": "backend"
+  },
+
+  {
+    "name": "MongoDB",
+    "icon": "https://img.icons8.com/color/80/mongodb.png",
+    "alt": "MongoDB Icon",
+    "description": "MongoDB is a NoSQL database for storing and managing unstructured data.",
+    "level": "60",
+    "link": "https://www.mongodb.com/",
+    "category": "database"
+  },
+  {
+    "name": "PostgreSQL",
+    "icon": "https://img.icons8.com/color/80/postgreesql.png",
+    "alt": "PostgreSQL Icon",
+    "description": "PostgreSQL is a robust open-source relational database system.",
+    "level": "75",
+    "link": "https://www.postgresql.org/",
+    "category": "database"
+  },
+  {
+    "name": "MySQL",
+    "icon": "https://img.icons8.com/color/80/mysql-logo.png",
+    "alt": "MySQL Logo Icon",
+    "description": "MySQL is a widely-used open-source relational database management system.",
+    "level": "70",
+    "link": "https://www.mysql.com/",
+    "category": "database"
+  },
+  {
+    "name": "Git",
+    "icon": "https://img.icons8.com/color/80/git.png",
+    "alt": "Git Icon",
+    "description": "Git is a distributed version control system for tracking changes in source code during software development.",
+    "level": "60",
+    "link": "https://git-scm.com/",
+    "category": "others"
+  },
+  {
+    "name": "Firebase",
+    "icon": "https://img.icons8.com/color/80/firebase.png",
+    "alt": "Firebase Icon",
+    "description": "Firebase is a comprehensive mobile and web application development platform.",
+    "level": "70",
+    "link": "https://firebase.google.com/",
+    "category": "others"
+  }
+]

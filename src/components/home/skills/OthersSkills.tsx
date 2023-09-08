@@ -1,11 +1,11 @@
 import Image from "next/image";
 import React from "react";
 
-export default function FrontEnd() {
+export default function OtherSkills() {
   let skills = [
     {
       name: "HTML",
-      icon: "https://img.icons8.com/color/80/html-5.png",
+      icon: "https://img.icons8.com/color/80/git.png",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Utfugit nulla pariatur enim ducimus dolor.",
       level: "60",
@@ -13,47 +13,7 @@ export default function FrontEnd() {
     },
     {
       name: "CSS",
-      icon: "https://img.icons8.com/color/80/css3.png",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Utfugit nulla pariatur enim ducimus dolor.",
-      level: "60",
-      link: "",
-    },
-    {
-      name: "CSS",
-      icon: "https://img.icons8.com/color/80/tailwindcss.png",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Utfugit nulla pariatur enim ducimus dolor.",
-      level: "60",
-      link: "",
-    },
-    {
-      name: "CSS",
-      icon: "https://img.icons8.com/color/80/javascript--v1.png",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Utfugit nulla pariatur enim ducimus dolor.",
-      level: "60",
-      link: "",
-    },
-    {
-      name: "CSS",
-      icon: "https://img.icons8.com/color/80/react-native.png",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Utfugit nulla pariatur enim ducimus dolor.",
-      level: "60",
-      link: "",
-    },
-    {
-      name: "CSS",
-      icon: "https://img.icons8.com/color/80fluency/80/nextjs.png",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Utfugit nulla pariatur enim ducimus dolor.",
-      level: "60",
-      link: "",
-    },
-    {
-      name: "CSS",
-      icon: "https://img.icons8.com/color/80fluency/80/redux.png",
+      icon: "https://img.icons8.com/color/80/firebase.png",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Utfugit nulla pariatur enim ducimus dolor.",
       level: "60",
@@ -63,7 +23,7 @@ export default function FrontEnd() {
   return (
     <div>
       <div className="text-3xl font-bold text-slate-900">
-        FrontEnd <span className="text-xl text-green-900">60%</span>
+        OtherSkills <span className="text-xl text-green-900">60%</span>
       </div>
       <div>
         <p className="my-3">
