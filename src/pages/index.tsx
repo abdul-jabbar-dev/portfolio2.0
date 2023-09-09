@@ -21,7 +21,13 @@ const Home: PageWithLayout = () => {
       <Head>
         {/* <!-- Primary Meta Tags --> */}
         <title>Abdul Jabbar - MERN Stack Developer</title>
+        <link rel="shortcut icon" href="/abdul jabbar.ico" type="image/x-icon" />
         <meta name="title" content="Abdul Jabbar - MERN Stack Developer" />
+        <meta
+          name="keywords"
+          content="Abdul, Jabbar, Abdul Jabbar, Abdul Jabbar dev, MERN Stack ,Developer, Programmer, Full Stack Developer"
+        />
+        <meta name="author" content="Abdul Jabbar" />
         <meta
           name="description"
           content="Welcome to the portfolio of Abdul Jabbar, a MERN stack developer. Explore dynamic web apps and elegant solutions crafted using MongoDB, Express.js, React, and Node.js – witness innovation in action."
