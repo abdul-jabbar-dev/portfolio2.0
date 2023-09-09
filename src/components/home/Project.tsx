@@ -27,7 +27,7 @@ export default function Project({
 
           <div className="flex space-x-6 justify-start ">
             <div
-              onClick={() => window.open(project.live_link, "_blank")}
+              onClick={() => window.open(project.github_link, "_blank")}
               className="flex cursor-pointer  px-2 my-3 rounded-lg justify-end items-center space-x-2"
             >
               <Image
@@ -39,7 +39,7 @@ export default function Project({
               <p className="font-bold text-gray-700 ">Github link</p>
             </div>
             <div
-              onClick={() => window.open(project.github_link, "_blank")}
+              onClick={() => window.open(project.live_link, "_blank")}
               className="flex cursor-pointer   px-2 my-3 rounded-lg justify-end items-center space-x-2"
             >
               <Image

@@ -6,7 +6,7 @@ const RootNav = ({ children }: { children: React.ReactNode }) => {
           <span className="text-xl font-bold text-neutral-800">
             Abdul.jabbar.dev
           </span>
-          <div>Home</div>
+          <div> </div>
         </div>
       </nav>
       {children}

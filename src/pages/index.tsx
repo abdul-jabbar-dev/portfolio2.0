@@ -4,13 +4,20 @@ import ShortDescription from "@/components/home/ShortDescription";
 import Skills from "@/components/home/Skills";
 import RootNav from "@/sheard/navbar/RootNav";
 import { PageWithLayout } from "@/types/components/PageWithLayout";
+import React from "react";
 
 import { ReactNode } from "react";
 
 const Home: PageWithLayout = () => {
+  const [links, setLinks] = React.useState([]);
+  React.useEffect(() => {
+    fetch("/api/links.json")
+      .then((res) => res.json())
+      .then((data) => setLinks(data));
+  });
   return (
     <div className="bg-light">
-      <ShortDescription />
+      <ShortDescription links={links} />
       <AboutMe />
       <Skills />
       <Projects />

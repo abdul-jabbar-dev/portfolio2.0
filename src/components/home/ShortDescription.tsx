@@ -1,6 +1,7 @@
+import TLink from "@/types/documents/link";
 import Image from "next/image";
 import React from "react";
-export default function ShortDescription() {
+export default function ShortDescription({ links }: { links: TLink[] }) {
   return (
     <div className="xl:w-content container h-screen flex flex-col justify-center mx-auto">
       <div className="flex flex-col md:flex-row my-6   justify-center items-center mx-auto">
@@ -8,8 +9,8 @@ export default function ShortDescription() {
           <Image
             className="rounded-full  mx-auto xl:ml-auto"
             alt="Abdul jabbar"
-            width={800}
-            height={800}
+            width={300}
+            height={300}
             style={{ width: "70%" }}
             src={"https://avatars.githubusercontent.com/u/76696749?v=4"}
           ></Image>
@@ -19,80 +20,24 @@ export default function ShortDescription() {
           <h1 className="text-5xl my-5 mx-auto text-slate-900 font-extrabold">
             Full Stack Web Developer
           </h1>
-          <p className="text-lg mx-auto  text-slate-700 text-justify">
+          <h1 className="text-lg mx-auto  text-slate-700 text-justify">
             Hi I am Abdul Jabbar i&lsquo;m a MERN stack developer with a passion
             for building responsive and intuitive web applications.
-          </p>
+          </h1>
           <span className="flex gap-x-2 my-3 opacity-80">
-            <a href="https://github.com/abdul-jabbar-dev" target="_blank">
-              <Image
-                width="30"
-                className="w-7 "
-                height="30"
-                src="/media/svg/facebook.svg"
-                alt="fiverr"
-              />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/abdul-jabbar-dev/"
-              target="_blank"
-            >
-              <Image
-                width="30"
-                className="w-7 "
-                height="30"
-                src="/media/svg/github.svg"
-                alt="fiverr"
-              />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/abdul-jabbar-dev/"
-              target="_blank"
-            >
-              <Image
-                width="30"
-                className="w-7 "
-                height="30"
-                src="/media/svg/linkedin.svg"
-                alt="fiverr"
-              />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/abdul-jabbar-dev/"
-              target="_blank"
-            >
-              <Image
-                width="30"
-                className="w-7 "
-                height="30"
-                src="/media/svg/fiverr.svg"
-                alt="fiverr"
-              />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/abdul-jabbar-dev/"
-              target="_blank"
-            >
-              <Image
-                width="30"
-                className="w-7 "
-                height="30"
-                src="/media/svg/google.svg"
-                alt="fiverr"
-              />
-            </a>{" "}
-            <a
-              href="https://www.linkedin.com/in/abdul-jabbar-dev/"
-              target="_blank"
-            >
-              <Image
-                width="30"
-                className="w-7 "
-                height="30"
-                src="/media/svg/instagram.svg"
-                alt="fiverr"
-              />
-            </a>
+            {links.map((ALink, i) => {
+              return (
+                <Image
+                  onClick={() => window.open(ALink.link, "_blank")}
+                  key={i}
+                  width="30"
+                  className="w-7 cursor-pointer hover:rounded-full hover:bg-gray-300 "
+                  height="30"
+                  src={ALink.link_icon}
+                  alt="fiverr"
+                />
+              );
+            })}
           </span>
         </div>
       </div>

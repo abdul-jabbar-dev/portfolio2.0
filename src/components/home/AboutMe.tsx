@@ -12,7 +12,7 @@ export default function AboutMe() {
             className="rounded-2xl"
             style={{ width: "100%" }}
             src={"/aboutImg.jpg"}
-            alt=""
+            alt="Abdul jabbar"
           />
         </div>
         <div className="  xl:w-1/2 md:w-[50%] w-[80%] md:my-auto my-8 mx-auto ">
@@ -23,10 +23,13 @@ export default function AboutMe() {
             A dedicated Front-end Developer based in Dhaka, Bangladesh 📍
           </h2>
           <p className="text-slate-600">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam
-            labore doloremque aliquam sequi quia aut ex atque, iure vel velit,
-            dicta autem ipsa voluptas. Quae laboriosam unde illo praesentium
-            autem.
+            🚀 Hi, I&apos;m Abdul Jabbar, a results-driven MERN Stack Developer
+            hailing from the vibrant tech scene of Bangladesh 🇧🇩. With over 2
+            years of dedicated experience, I&apos;m your go-to partner for
+            building dynamic and user-friendly web applications. My passion lies
+            in translating ideas into elegant, efficient, and scalable solutions
+            that make an impact. Let&apos;s collaborate to bring your digital
+            dreams to life!
           </p>
         </div>
       </div>
