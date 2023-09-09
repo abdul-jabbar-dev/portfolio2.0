@@ -1,0 +1,22 @@
+[
+  {
+    "name": "backend",
+    "level": 75,
+    "description": "Since 2021, my backend development journey has been powered by Node.js, Express.js, and Mongoose, leading to the exploration of Next.js API and Prisma. I've honed my skills and now thrive in the world of backend development."
+  },
+  {
+    "name": "frontend",
+    "level": 60,
+    "description": "Experience the future of frontend development with my proficiency in ReactJS and Next.js, enhanced by TypeScript. I create sleek, responsive interfaces using modern design principles and Tailwind CSS. Whether it's traditional frontend or MERN stack, I craft engaging user experiences."
+  },
+  {
+    "name": "database",
+    "level": 60,
+    "description": "I handle databases with expertise in Mongoose, PostgreSQL, and some knowledge of MySQL. My server-side programming skills ensure seamless data management and robust backend solutions."
+  },
+  {
+    "name": "others",
+    "level": 60,
+    "description": "As a mern-stack developer, I possess foundational knowledge in DevOps, ensuring smoother deployment and efficient collaboration between development and operations teams."
+  }
+]

@@ -14,6 +14,7 @@ const Home: PageWithLayout = () => {
     fetch("/api/links.json")
       .then((res) => res.json())
       .then((data) => setLinks(data));
+
   });
   return (
     <div className="bg-light">

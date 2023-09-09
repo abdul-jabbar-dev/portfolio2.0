@@ -11,7 +11,7 @@ export default function AboutMe() {
             width={600}
             className="rounded-2xl"
             style={{ width: "100%" }}
-            src={"/aboutImg.jpg"}
+            src={"/media/aboutImg.jpg"}
             alt="Abdul jabbar"
           />
         </div>

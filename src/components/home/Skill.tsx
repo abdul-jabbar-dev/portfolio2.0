@@ -1,15 +1,21 @@
+import TCategory from "@/types/documents/category";
 import TSkill from "@/types/documents/skills";
 import Image from "next/image";
 import React from "react";
 
 export default function Skill({
   skills,
+  category,
   id,
 }: {
   skills: TSkill[];
+  category?: TCategory;
   id: number;
 }) {
   const [toggle, setToggle] = React.useState(2);
+  if (!category) {
+    return "loading";
+  }
 
   return (
     <div>
@@ -24,11 +30,7 @@ export default function Skill({
         </summary>
         <div className="mt-3 text-sm leading-6 text-slate-600 px-6">
           <div>
-            <p className="my-3">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
-              ipsam fugiat possimus consequuntur. Autem qui, nobis
-              reprehenderit, officia fuga obcaecati voluptas ut facilis,
-            </p>
+            <p className="my-3">{category.description}</p>
             <div className="">
               <div className={"flex flex-wrap py-5 "}>
                 {skills?.slice(0, toggle).map((skill: TSkill, i: number) => (
