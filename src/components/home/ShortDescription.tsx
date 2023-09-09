@@ -6,7 +6,7 @@ import { AiFillGithub } from "react-icons/ai";
 export default function ShortDescription() {
   return (
     <div className="xl:w-content container h-screen flex flex-col justify-center mx-auto">
-      <div className="flex flex-col md:flex-row my-16 justify-center items-center mx-auto">
+      <div className="flex flex-col md:flex-row my-6   justify-center items-center mx-auto">
         <div className=" xl:w-1/2 md:w-[50%] w-[80%] order-1 xl:order-2  ">
           <Image
             className="rounded-full  mx-auto xl:ml-auto"
@@ -39,13 +39,13 @@ export default function ShortDescription() {
           </span>
         </div>
       </div>
-      <div className="flex items-center  ">
+      <div className="flex items-center md:flex-row my-10 justify-center md:justify-start flex-col ">
         <div>
-          <p className="text-lg font-bold min-w-max text-slate-800">
+          <h3 className="text-blue-800  min-w-max text-lg font-bold uppercase">
             Tech stack &nbsp;&nbsp;&nbsp;&nbsp;|
-          </p>
+          </h3>
         </div>
-        <div className=" flex gap-x-6 px-6 w-full">
+        <div className=" flex gap-x-6 px-6 w-full justify-center md:justify-start">
           <Image
             width="38"
             height="38"

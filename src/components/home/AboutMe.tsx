@@ -3,7 +3,7 @@ import React from "react";
 
 export default function AboutMe() {
   return (
-    <div className="xl:w-content container my-32 mx-auto">
+    <div className="xl:w-content container mb-32  mx-auto">
       <div className="flex gap-x-8 flex-col md:flex-row">
         <div className="xl:w-1/2 md:w-[50%] w-[80%] my-auto mx-auto">
           <Image

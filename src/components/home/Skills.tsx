@@ -1,6 +1,6 @@
 import React from "react";
 import TSkill from "@/types/documents/skills";
-import AllSkills from "./Allskills";
+import Skill from "./Skill";
 
 export default function Skills() {
   const [allSkills, setAllskills] = React.useState<TSkill[]>([]);
@@ -20,8 +20,11 @@ export default function Skills() {
   }, []);
   return (
     <div className="xl:w-content container mx-auto relative ">
+      <h3 className="text-blue-800 text-lg font-bold uppercase">
+        technical skills
+      </h3>
       {allCategories.map((category, i) => (
-        <AllSkills
+        <Skill
           key={i}
           id={i}
           skills={allSkills.filter((sk) => sk.category === category)}

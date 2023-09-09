@@ -1,0 +1,26 @@
+[
+  {
+    "title": "My Awesome Project",
+    "image": "https://example.com/project-image.jpg",
+    "description": "This is a short description of my awesome project.",
+    "technologies": ["JavaScript", "React"],
+    "github_link": "https://github.com/yourusername/my-awesome-project",
+    "live_link": "https://www.myawesomeproject.com"
+  },
+  {
+    "title": "My Awesome Project",
+    "image": "https://example.com/project-image.jpg",
+    "description": "This is a short description of my awesome project.",
+    "technologies": ["JavaScript", "React"],
+    "github_link": "https://github.com/yourusername/my-awesome-project",
+    "live_link": "https://www.myawesomeproject.com"
+  },
+  {
+    "title": "My Awesome Project",
+    "image": "https://example.com/project-image.jpg",
+    "description": "This is a short description of my awesome project.",
+    "technologies": ["JavaScript", "React"],
+    "github_link": "https://github.com/yourusername/my-awesome-project",
+    "live_link": "https://www.myawesomeproject.com"
+  }
+]

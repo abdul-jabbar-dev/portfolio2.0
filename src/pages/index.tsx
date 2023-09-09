@@ -9,12 +9,12 @@ import { ReactNode } from "react";
 
 const Home: PageWithLayout = () => {
   return (
-    <>
+    <div className="bg-light">
       <ShortDescription />
       <AboutMe />
       <Skills />
       <Projects />
-    </>
+    </div>
   );
 };
 

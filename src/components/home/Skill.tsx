@@ -2,7 +2,7 @@ import TSkill from "@/types/documents/skills";
 import Image from "next/image";
 import React from "react";
 
-export default function AllSkills({
+export default function Skill({
   skills,
   id,
 }: {
@@ -15,14 +15,14 @@ export default function AllSkills({
     <div>
       <details
         open={id === 0}
-        className="open:bg-white my-2 ring-1 ring-black/5  open:shadow-lg p-6  rounded-xl"
+        className="my-2 ring-1 ring-black/5 open:shadow-lg rounded-xl"
       >
-        <summary className="cursor-pointer text-sm leading-6 text-slate-900  font-semibold select-none">
-          <span className="text-2xl uppercase relative   text-slate-900">
+        <summary className="cursor-pointer text-sm leading-6 p-6 text-slate-900  font-semibold select-none">
+          <span className="text-2xl  uppercase relative   text-slate-900">
             {skills[0].category}
           </span>
         </summary>
-        <div className="mt-3 text-sm leading-6 text-slate-600 ">
+        <div className="mt-3 text-sm leading-6 text-slate-600 px-6">
           <div>
             <p className="my-3">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
@@ -32,7 +32,7 @@ export default function AllSkills({
             <div className="">
               <div className={"flex flex-wrap py-5 "}>
                 {skills?.slice(0, toggle).map((skill: TSkill, i: number) => (
-                  <div key={i} className="w-1/2 flex items-start">
+                  <div key={i} className="w-1/2 flex  items-start">
                     <Image
                       onClick={() => window.open(skill.link, "_blank")}
                       width="80"
@@ -65,7 +65,7 @@ export default function AllSkills({
                 >
                   {
                     <Image
-                      className="mx-auto cursor-pointer" 
+                      className="mx-auto cursor-pointer"
                       width="24"
                       height="24"
                       src={
