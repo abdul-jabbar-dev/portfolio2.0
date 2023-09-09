@@ -1,8 +1,5 @@
 import Image from "next/image";
 import React from "react";
-import { TiSocialLinkedinCircular } from "react-icons/ti";
-import { AiFillGithub } from "react-icons/ai";
-
 export default function ShortDescription() {
   return (
     <div className="xl:w-content container h-screen flex flex-col justify-center mx-auto">
@@ -26,15 +23,75 @@ export default function ShortDescription() {
             Hi I am Abdul Jabbar i&lsquo;m a MERN stack developer with a passion
             for building responsive and intuitive web applications.
           </p>
-          <span className="flex gap-x-2 my-3">
+          <span className="flex gap-x-2 my-3 opacity-80">
             <a href="https://github.com/abdul-jabbar-dev" target="_blank">
-              <TiSocialLinkedinCircular size={"2rem"} />
+              <Image
+                width="30"
+                className="w-7 "
+                height="30"
+                src="/svg/facebook.svg"
+                alt="fiverr"
+              />
             </a>
             <a
               href="https://www.linkedin.com/in/abdul-jabbar-dev/"
               target="_blank"
             >
-              <AiFillGithub size={"2rem"} />
+              <Image
+                width="30"
+                className="w-7 "
+                height="30"
+                src="/svg/github.svg"
+                alt="fiverr"
+              />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/abdul-jabbar-dev/"
+              target="_blank"
+            >
+              <Image
+                width="30"
+                className="w-7 "
+                height="30"
+                src="/svg/linkedin.svg"
+                alt="fiverr"
+              />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/abdul-jabbar-dev/"
+              target="_blank"
+            >
+              <Image
+                width="30"
+                className="w-7 "
+                height="30"
+                src="/svg/fiverr.svg"
+                alt="fiverr"
+              />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/abdul-jabbar-dev/"
+              target="_blank"
+            >
+              <Image
+                width="30"
+                className="w-7 "
+                height="30"
+                src="/svg/google.svg"
+                alt="fiverr"
+              />
+            </a>{" "}
+            <a
+              href="https://www.linkedin.com/in/abdul-jabbar-dev/"
+              target="_blank"
+            >
+              <Image
+                width="30"
+                className="w-7 "
+                height="30"
+                src="/svg/instagram.svg"
+                alt="fiverr"
+              />
             </a>
           </span>
         </div>
