@@ -21,7 +21,7 @@ export default function ShortDescription({ links }: { links: TLink[] }) {
             Full Stack Web Developer
           </h1>
           <h1 className="text-lg mx-auto  text-slate-700 text-justify">
-            Hi I am Abdul Jabbar i&lsquo;m a MERN stack developer with a passion
+            Hi I am <span className="font-bold inline text-xl">Abdul Jabbar</span> i&lsquo;m a MERN stack developer with a passion
             for building responsive and intuitive web applications.
           </h1>
           <span className="flex gap-x-2 my-3 opacity-80">
