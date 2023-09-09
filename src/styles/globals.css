@@ -5,3 +5,27 @@
 .bg-light {
   background-color: rgb(239, 244, 248);
 } 
+
+.screen {
+	display: block;
+	width: 300px;
+	height: 350px;
+	overflow: hidden;
+	position: relative; 
+	border-radius: 1px;
+	margin: 0 auto;
+}
+.screen img {
+	top: 0px;
+	width: 100%;
+	height: auto;
+	position: absolute;
+	z-index: 0;
+  margin:0;
+  padding:0; 
+	transition: bottom 11s;
+}
+.screen:hover img {
+  top: -800px; 
+  transition: all 11s;
+}

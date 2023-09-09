@@ -54,14 +54,16 @@ export default function Project({
         </div>
       </div>
       <div
-        className={"md:w-7/12 w-full ".concat(id % 2 == 0 ? " order-2" : " ")}
+        className={"md:w-7/12 w-full h-96 overflow-hidden screen".concat(
+          id % 2 == 0 ? " order-2" : " "
+        )}
       >
         <Image
-          width={1000}
+          width={900}
           height={800}
           style={{ width: "100%" }}
-          src={"/web.jpg"}
-          alt={""}
+          src={project.image}
+          alt={project.title}
         />
       </div>
     </div>

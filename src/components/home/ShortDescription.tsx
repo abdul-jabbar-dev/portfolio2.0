@@ -29,7 +29,7 @@ export default function ShortDescription() {
                 width="30"
                 className="w-7 "
                 height="30"
-                src="/svg/facebook.svg"
+                src="/media/svg/facebook.svg"
                 alt="fiverr"
               />
             </a>
@@ -41,7 +41,7 @@ export default function ShortDescription() {
                 width="30"
                 className="w-7 "
                 height="30"
-                src="/svg/github.svg"
+                src="/media/svg/github.svg"
                 alt="fiverr"
               />
             </a>
@@ -53,7 +53,7 @@ export default function ShortDescription() {
                 width="30"
                 className="w-7 "
                 height="30"
-                src="/svg/linkedin.svg"
+                src="/media/svg/linkedin.svg"
                 alt="fiverr"
               />
             </a>
@@ -65,7 +65,7 @@ export default function ShortDescription() {
                 width="30"
                 className="w-7 "
                 height="30"
-                src="/svg/fiverr.svg"
+                src="/media/svg/fiverr.svg"
                 alt="fiverr"
               />
             </a>
@@ -77,7 +77,7 @@ export default function ShortDescription() {
                 width="30"
                 className="w-7 "
                 height="30"
-                src="/svg/google.svg"
+                src="/media/svg/google.svg"
                 alt="fiverr"
               />
             </a>{" "}
@@ -89,7 +89,7 @@ export default function ShortDescription() {
                 width="30"
                 className="w-7 "
                 height="30"
-                src="/svg/instagram.svg"
+                src="/media/svg/instagram.svg"
                 alt="fiverr"
               />
             </a>
