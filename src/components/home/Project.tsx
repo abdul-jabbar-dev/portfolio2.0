@@ -13,7 +13,7 @@ export default function Project({
     <div className="flex md:flex-row gap-x-6 flex-col my-6 w-full items-center p-6  ">
       <div className={"md:w-5/12   ".concat(id % 2 == 0 ? "" : "  order-1")}>
         <div className="w-[90%]">
-          <h2 className="font-bold text-slate-700 text-2xl">{project.title}</h2>
+          <h2 className="font-bold text-2xl text-slate-700">{project.title}</h2>
           <div className="flex justify-start my-5 gap-x-8">
             {project.technologies.map((usedTech) => (
               <span key={usedTech} className=" text-slate-500 font-semibold ">
@@ -26,29 +26,29 @@ export default function Project({
           </p>
 
           <div className="flex space-x-6 justify-start ">
-            <div
-              onClick={() => window.open(project.github_link, "_blank")}
-              className="flex cursor-pointer  px-2 my-3 rounded-lg justify-end items-center space-x-2"
+            <div onClick={() => window.open(project.github_link, "_blank")}
+              className="flex cursor-pointer text-slate-600  px-2 my-3 rounded-lg justify-end items-center space-x-2"
             >
               <Image
                 width="36"
                 height="36"
+                className="opacity-80"
                 src="https://img.icons8.com/ios-glyphs/50/github.png"
                 alt="github"
               />
-              <p className="font-bold text-gray-700 ">Github link</p>
+              <p className="font-bold ">Github link</p>
             </div>
-            <div
-              onClick={() => window.open(project.live_link, "_blank")}
-              className="flex cursor-pointer   px-2 my-3 rounded-lg justify-end items-center space-x-2"
+            <div onClick={() => window.open(project.live_link, "_blank")}
+              className="flex cursor-pointer text-slate-600  px-2 my-3 rounded-lg justify-end items-center space-x-2"
             >
               <Image
                 width="36"
                 height="36"
+                className="opacity-80"
                 src="https://img.icons8.com/material-sharp/50/link--v1.png"
                 alt="link--v1"
               />
-              <p className="font-bold text-gray-700 ">Live link</p>
+              <p className="font-bold">Live link</p>
             </div>
           </div>
         </div>

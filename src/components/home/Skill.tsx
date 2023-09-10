@@ -23,10 +23,8 @@ export default function Skill({
         open={id === 0}
         className="my-2 ring-1 ring-black/5 open:shadow-lg rounded-xl"
       >
-        <summary className="cursor-pointer text-sm leading-6 p-6 text-slate-900  font-semibold select-none">
-          <span className="text-2xl  uppercase relative   text-slate-900">
-            {skills[0].category}
-          </span>
+        <summary className="cursor-pointer leading-6 p-6 font-bold text-2xl text-slate-700  uppercase relative  select-none">
+          <span className="">{skills[0].category}</span>
         </summary>
         <div className="mt-3 text-sm leading-6 text-slate-600 px-6">
           <div>

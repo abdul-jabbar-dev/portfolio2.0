@@ -1,7 +1,9 @@
 import AboutMe from "@/components/home/AboutMe";
+import Contact from "@/components/home/Contact";
 import Projects from "@/components/home/Projects";
 import ShortDescription from "@/components/home/ShortDescription";
 import Skills from "@/components/home/Skills";
+import RootFooter from "@/sheard/footer/RootFooter";
 import RootNav from "@/sheard/navbar/RootNav";
 import { PageWithLayout } from "@/types/components/PageWithLayout";
 import Head from "next/head";
@@ -17,11 +19,15 @@ const Home: PageWithLayout = () => {
       .then((data) => setLinks(data));
   });
   return (
-    <div className="bg-light">
+    <div id="landBody" className="bg-light">
       <Head>
         {/* <!-- Primary Meta Tags --> */}
         <title>Abdul Jabbar - MERN Stack Developer</title>
-        <link rel="shortcut icon" href="/abdul jabbar.ico" type="image/x-icon" />
+        <link
+          rel="shortcut icon"
+          href="/abdul jabbar.ico"
+          type="image/x-icon"
+        />
         <meta name="title" content="Abdul Jabbar - MERN Stack Developer" />
         <meta
           name="keywords"
@@ -75,6 +81,7 @@ const Home: PageWithLayout = () => {
       <AboutMe />
       <Skills />
       <Projects />
+      <Contact/>
     </div>
   );
 };
@@ -82,7 +89,9 @@ const Home: PageWithLayout = () => {
 Home.getLayout = (containe: ReactNode) => {
   return (
     <>
-      <RootNav>{containe}</RootNav>
+      <RootNav>
+        <RootFooter>{containe}</RootFooter>
+      </RootNav>
     </>
   );
 };
