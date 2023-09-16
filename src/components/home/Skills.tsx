@@ -4,14 +4,14 @@ import Skill from "./Skill";
 import TCategory from "@/types/documents/category";
 
 export default function Skills() {
-  const [allSkills, setAllskills] = React.useState<TSkill[]>([]);
+  const [allSkills, setAllSkills] = React.useState<TSkill[]>([]);
   const [allCategories, setAllCategories] = React.useState<string[]>([]);
   const [categories, setCategories] = React.useState<TCategory[]>([]);
   React.useEffect(() => {
     fetch("/api/allskills.json")
       .then((res) => res.json())
       .then((data: TSkill[]) => {
-        setAllskills(data);
+        setAllSkills(data);
 
         const setOfCategories: Set<string> = new Set(
           data.map((d: TSkill) => d.category)
@@ -25,8 +25,8 @@ export default function Skills() {
       .then((data) => setCategories(data));
   }, []);
   return (
-    <div className="xl:w-content container mx-auto relative ">
-      <h3 className="text-blue-800 text-lg font-bold uppercase">
+    <div className="2xl:w-content py-10 container mx-auto  ">
+      <h3 className="text-blue-800  mb-6 text-lg font-bold relative uppercase">
         technical skills
       </h3>
       {allCategories.map((category, i) => (

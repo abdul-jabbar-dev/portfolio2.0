@@ -31,7 +31,7 @@ const Home: PageWithLayout = () => {
         <meta name="title" content="Abdul Jabbar - MERN Stack Developer" />
         <meta
           name="keywords"
-          content="Abdul, Jabbar, Abdul Jabbar, Abdul Jabbar dev, MERN Stack ,Developer, Programmer, Full Stack Developer"
+          content="Abdul, Jabbar, Abdul Jabbar, Abdul Jabbar dev,Javascript developer, MERN Stack , Developer,Web Developer, Programmer, Full Stack Web Developer"
         />
         <meta name="author" content="Abdul Jabbar" />
         <meta
@@ -77,20 +77,22 @@ const Home: PageWithLayout = () => {
           content="https://media.licdn.com/dms/image/D5635AQFugmuTnYD68w/profile-framedphoto-shrink_200_200/0/1686497791148?e=1694887200&v=beta&t=dT-ZGSCWDKtsXTLSkMgUjllNavh0eUT0IqP-B_cSe_o"
         />
       </Head>
-      <ShortDescription links={links} />
-      <AboutMe />
-      <Skills />
-      <Projects />
-      <Contact/>
+      <div className="">
+        <ShortDescription links={links} />
+        <AboutMe />
+        <Skills />
+        <Projects />
+        <Contact />
+      </div>
     </div>
   );
 };
 
-Home.getLayout = (containe: ReactNode) => {
+Home.getLayout = (contain: ReactNode) => {
   return (
     <>
       <RootNav>
-        <RootFooter>{containe}</RootFooter>
+        <RootFooter>{contain}</RootFooter>
       </RootNav>
     </>
   );

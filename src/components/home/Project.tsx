@@ -10,8 +10,9 @@ export default function Project({
   id: number;
 }) {
   return (
-    <div className="flex md:flex-row gap-x-6 flex-col my-6 w-full items-center p-6  ">
-      <div className={"md:w-5/12   ".concat(id % 2 == 0 ? "" : "  order-1")}>
+    <div className="flex md:flex-row gap-x-6 flex-col my-6 w-full items-center ">
+      <div
+        className={"py-6 md:py-0 md:w-5/12  ".concat(id % 2 == 0 ? "" : "  md:order-1")}>
         <div className="w-[90%]">
           <h2 className="font-bold text-2xl text-slate-700">{project.title}</h2>
           <div className="flex justify-start my-5 gap-x-8">
@@ -54,10 +55,7 @@ export default function Project({
         </div>
       </div>
       <div
-        className={"md:w-7/12 w-full h-96 overflow-hidden screen".concat(
-          id % 2 == 0 ? " order-2" : " "
-        )}
-      >
+        className={"md:w-7/12 w-full h-96 overflow-hidden screen".concat(id % 2 == 0 ? " md:order-2" : " ")}>
         <Image
           width={900}
           height={800}

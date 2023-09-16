@@ -13,7 +13,7 @@ const RootFooter = ({ children }: { children: React.ReactNode }) => {
     <>
       {children}
       <div className="py-16  bg-zinc-800">
-        <div className="xl:w-content container mx-auto flex justify-between">
+        <div className="2xl:w-content container mx-auto flex justify-between">
           <h2 className="font-bold text-xl text-slate-300">
             Copyright © 2023. All rights are reserved
           </h2>

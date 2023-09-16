@@ -16,7 +16,7 @@ const config: Config = {
       },
       width: {
         "nav": "90%",
-        "content": "45%",
+        "content": "50%",
       },
     },
   },
