@@ -4,7 +4,7 @@ const RootNav = ({ children }: { children: React.ReactNode }) => {
       <nav className="py-7  shadow-md z-[999] fixed w-full bg-light">
         <div className="w-nav mx-auto flex justify-between bg-light">
           <span className="text-xl font-bold text-neutral-800">
-            Abdul.jabbar.dev
+            ABDUL.JABBAR
           </span>
           <div> </div>
         </div>

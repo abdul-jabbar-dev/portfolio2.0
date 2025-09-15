@@ -4,7 +4,7 @@ import { MdMap } from "react-icons/md";
 export default function Contact() {
   return (
     <div className="2xl:w-content container xl:mx-auto py-16 mx-3">
-      <h3 className= "mb-6 text-blue-800 text-lg font-bold relative uppercase">
+      <h3 className= "mb-6 text-blue-800/50 text-5xl font-bold relative uppercase"> 
         CONTACT
       </h3>
       <h2 className="my-2   font-bold text-2xl text-slate-700  ">

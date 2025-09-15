@@ -16,7 +16,8 @@ export default function Projects() {
   return (
     <div className="2xl:w-content container mx-auto my-16">
       <div className="">
-        <h3 className=" text-blue-800 text-lg font-bold relative uppercase">
+        <h3 className=" text-blue-800/50 text-5xl font-bold relative uppercase">
+          
           PORTFOLIO
         </h3>
         <div className="flex  px-4 flex-col gap-y-10">

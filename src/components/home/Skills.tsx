@@ -26,7 +26,7 @@ export default function Skills() {
   }, []);
   return (
     <div className="2xl:w-content py-10 container mx-auto  ">
-      <h3 className="text-blue-800  mb-6 text-lg font-bold relative uppercase">
+      <h3 className="text-blue-800/50 text-5xl mb-6   font-bold relative uppercase">
         technical skills
       </h3>
       {allCategories.map((category, i) => (

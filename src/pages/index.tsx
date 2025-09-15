@@ -1,5 +1,6 @@
 import AboutMe from "@/components/home/AboutMe";
 import Contact from "@/components/home/Contact";
+import Experiance from "@/components/home/Experiance";
 import Projects from "@/components/home/Projects";
 import ShortDescription from "@/components/home/ShortDescription";
 import Skills from "@/components/home/Skills";
@@ -80,6 +81,7 @@ const Home: PageWithLayout = () => {
       <div className="">
         <ShortDescription links={links} />
         <AboutMe />
+        <Experiance />
         <Skills />
         <Projects />
         <Contact />
