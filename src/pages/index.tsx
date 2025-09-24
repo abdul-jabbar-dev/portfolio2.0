@@ -81,7 +81,7 @@ const Home: PageWithLayout = () => {
       <div className="">
         <ShortDescription links={links} />
         <AboutMe />
-        <Experiance />
+        
         <Skills />
         <Projects />
         <Contact />
