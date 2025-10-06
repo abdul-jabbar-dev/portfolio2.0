@@ -1,3 +1,4 @@
+'use client'
 import TLink from "@/types/documents/link";
 import React from "react";
 import { AiOutlineGithub } from "react-icons/ai";

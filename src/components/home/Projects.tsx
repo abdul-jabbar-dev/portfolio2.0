@@ -1,3 +1,4 @@
+'use client'
 import TProject from "@/types/documents/project";
 import React from "react";
 import Project from "./Project";

@@ -1,8 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
+  reactStrictMode: false,
+  
   images: {
-    domains: ["avatars.githubusercontent.com", "img.icons8.com"],
+    domains: ["avatars.githubusercontent.com", "img.icons8.com","abduljabbar.netlify.app"],
   },
 };
 

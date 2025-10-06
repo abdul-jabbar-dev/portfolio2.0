@@ -1,24 +1,15 @@
+ 
 import AboutMe from "@/components/home/AboutMe";
 import Contact from "@/components/home/Contact";
-import Experiance from "@/components/home/Experiance";
+import Experience from "@/components/home/Experience";
 import Projects from "@/components/home/Projects";
-import ShortDescription from "@/components/home/ShortDescription";
-import Skills from "@/components/home/Skills";
-import RootFooter from "@/sheard/footer/RootFooter";
-import RootNav from "@/sheard/navbar/RootNav";
-import { PageWithLayout } from "@/types/components/PageWithLayout";
+import ShortDes from "@/components/home/ShortDes"; 
+import Skills from "@/components/home/Skills";  
 import Head from "next/head";
 import React from "react";
+ 
+const Home  = ( ) => {
 
-import { ReactNode } from "react";
-
-const Home: PageWithLayout = () => {
-  const [links, setLinks] = React.useState([]);
-  React.useEffect(() => {
-    fetch("/api/links.json")
-      .then((res) => res.json())
-      .then((data) => setLinks(data));
-  });
   return (
     <div id="landBody" className="bg-light">
       <Head>
@@ -78,26 +69,20 @@ const Home: PageWithLayout = () => {
           content="https://media.licdn.com/dms/image/D5635AQFugmuTnYD68w/profile-framedphoto-shrink_200_200/0/1686497791148?e=1694887200&v=beta&t=dT-ZGSCWDKtsXTLSkMgUjllNavh0eUT0IqP-B_cSe_o"
         />
       </Head>
+
+
       <div className="">
-        <ShortDescription links={links} />
+        {/* <ShortDescription /> */}
+        <ShortDes />
         <AboutMe />
-        <Experiance />
+        <Experience />
         <Skills />
-        <Projects />
+        <Projects /> 
         <Contact />
       </div>
+
     </div>
   );
 };
-
-Home.getLayout = (contain: ReactNode) => {
-  return (
-    <>
-      <RootNav>
-        <RootFooter>{contain}</RootFooter>
-      </RootNav>
-    </>
-  );
-};
-
+ 
 export default Home;

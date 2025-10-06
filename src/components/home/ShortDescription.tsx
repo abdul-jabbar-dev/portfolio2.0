@@ -1,7 +1,15 @@
+'use client'
 import TLink from "@/types/documents/link";
 import Image from "next/image";
 import React from "react";
-export default function ShortDescription({ links }: { links: TLink[] }) {
+
+export default function ShortDescription() {
+  const [links, setLinks] = React.useState<TLink[]>([]);
+  React.useEffect(() => {
+    fetch("/api/links.json")
+      .then((res) => res.json())
+      .then((data) => setLinks(data));
+  }, []);
   return (
     <div className={"2xl:w-content container flex flex-col justify-center mx-auto mb-32"}>
       <div className=" -mt-12 md:mt-28 lg:mt-28 xl:mt-48 flex flex-col md:flex-row     justify-center items-center mx-auto">
