@@ -6,7 +6,7 @@ import { getValidIconUrl } from "@/sheard/server_component/checkIUrl";
 
 export default async function ShortDes() {
     const data = await clientServer.request(API.Query.SHORT_DYN_DES);
-    const { hero } = data;
+    const { hero } = data as any;
 
     // ✅ Preprocess all icon URLs before render
     const socialLinks = await Promise.all(

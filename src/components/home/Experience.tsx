@@ -9,7 +9,7 @@ export default async function Experience() {
 
   try {
     const data = await clientServer.request(API.Query.EXPERIANCE_SECTION);
-    experiences = data?.experience || [];
+    experiences = (data as any)?.experience || [];
   } catch (err) {
     console.error("Failed to fetch experience section:", err);
   }

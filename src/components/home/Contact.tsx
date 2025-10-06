@@ -8,7 +8,7 @@ export default async function Contact() {
 
   try {
     const data = await clientServer.request(API.Query.CONTACT_SECTION);
-    contacts = data?.contact || [];
+    contacts = (data as any)?.contact || [];
   } catch (err) {
     console.error("❌ Failed to fetch contact section:", err);
   }

@@ -8,7 +8,7 @@ export default async function AboutMe() {
 
   try {
     const data = await clientServer.request(API.Query.ABOUT_SECTION);
-    about = data?.about;
+    about = (data as any)?.about;
     console.log(about)
   } catch (err) {
     console.error("Failed to fetch about section:", err);
