@@ -1,66 +1,44 @@
 import TProject from "@/types/documents/project";
 import Image from "next/image";
 import React from "react";
+import ProjectIconLink from "./ProjectIconLink";
 
 export default function Project({
   project,
-  id,
 }: {
-  project: TProject;
-  id: number;
+  project: TProject
 }) {
   return (
     <div className="flex md:flex-row gap-x-6 flex-col my-6 w-full items-center ">
       <div
-        className={"py-6 md:py-0 md:w-5/12  ".concat(id % 2 == 0 ? "" : "  md:order-1")}>
+        className={"py-6 md:py-0 md:w-5/12  ".concat(Number(project.id) % 2 == 0 ? "" : "  md:order-1")}>
         <div className="w-[90%]">
           <h2 className="font-bold text-2xl text-slate-700">{project.title}</h2>
           <div className="flex justify-start my-5 gap-x-8">
-            {project.technologies.map((usedTech) => (
+            {project.projectTools.map((usedTech) => (
               <span key={usedTech} className=" text-slate-500 font-semibold ">
                 {usedTech}
               </span>
             ))}
           </div>
           <p className="my-3 text-slate-500 font-semibold text-lg ">
-            {project.description}
+            {project.desc}
           </p>
 
-          <div className="flex space-x-6 justify-start ">
-            <div onClick={() => window.open(project.github_link, "_blank")}
-              className="flex cursor-pointer text-slate-600  px-2 my-3 rounded-lg justify-end items-center space-x-2"
-            >
-              <Image
-                width="36"
-                height="36"
-                className="opacity-80"
-                src="https://img.icons8.com/ios-glyphs/50/github.png"
-                alt="github"
-              />
-              <p className="font-bold ">Github link</p>
-            </div>
-            <div onClick={() => window.open(project.live_link, "_blank")}
-              className="flex cursor-pointer text-slate-600  px-2 my-3 rounded-lg justify-end items-center space-x-2"
-            >
-              <Image
-                width="36"
-                height="36"
-                className="opacity-80"
-                src="https://img.icons8.com/material-sharp/50/link--v1.png"
-                alt="link--v1"
-              />
-              <p className="font-bold">Live link</p>
-            </div>
+          <div className="flex space-x-6 justify-start">
+
+            {project.techStack.length > 0 && project.techStack.map((tech, i) => <ProjectIconLink tech={tech} key={i} />)}
           </div>
+
         </div>
       </div>
       <div
-        className={"md:w-7/12 w-full h-96 overflow-hidden screen".concat(id % 2 == 0 ? " md:order-2" : " ")}>
+        className={"md:w-7/12 w-full h-96 overflow-hidden screen".concat(Number(project.id) % 2 == 0 ? " md:order-2" : " ")}>
         <Image
           width={900}
           height={800}
           style={{ width: "100%" }}
-          src={project.image}
+          src={project.img}
           alt={project.title}
         />
       </div>

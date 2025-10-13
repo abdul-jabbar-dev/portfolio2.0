@@ -14,8 +14,8 @@ export default async function Contact() {
   }
 
   return (
-    <div className="2xl:w-content container xl:mx-auto py-16 mx-3">
-      <h3 className="mb-6 text-blue-800/50 text-5xl font-bold relative uppercase">
+    <div className="2xl:w-content  container  mx-auto my-24 px-3 ">
+      <h3 className="  mb-6 text-blue-800/50 text-5xl font-bold relative uppercase">
         CONTACT
       </h3>
       <h2 className="my-2 font-bold text-2xl text-slate-700">

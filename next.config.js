@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: false,
   
   images: {
-    domains: ["avatars.githubusercontent.com", "img.icons8.com","abduljabbar.netlify.app"],
+    domains: ["avatars.githubusercontent.com", "img.icons8.com","abduljabbar.netlify.app","*","www.smartaddons.com"],
   },
 };
 

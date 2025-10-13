@@ -3,8 +3,7 @@ import { ExperienceType } from "@/types/documents/experience";
 import clientServer from "@/lib/apolloClient";
 import API from "../../../api/gql";
 
-export default async function Experience() {
-  // Initialize as empty array to avoid undefined
+export default async function Experience() { 
   let experiences: ExperienceType[] = [];
 
   try {
@@ -15,9 +14,9 @@ export default async function Experience() {
   }
 
   return (
-    <div className="2xl:w-content container mx-auto">
+    <div className="2xl:w-content container mx-auto my-24">
       <h3 className="mb-3 text-blue-700">{"{ Web Dev Portfolio }"}</h3>
-      <h3 className="mb-6 text-blue-800/50 text-5xl font-bold relative uppercase">
+      <h3 className="  mb-6 text-blue-800/50 text-5xl font-bold relative uppercase">
         Experience
       </h3>
 

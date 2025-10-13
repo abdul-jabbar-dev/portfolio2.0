@@ -9,7 +9,6 @@ export default async function AboutMe() {
   try {
     const data = await clientServer.request(API.Query.ABOUT_SECTION);
     about = (data as any)?.about;
-    console.log(about)
   } catch (err) {
     console.error("Failed to fetch about section:", err);
   }
@@ -29,7 +28,7 @@ export default async function AboutMe() {
 
   return (
     <div className="2xl:w-content container mx-auto">
-      <div className="flex gap-x-8 my-16 flex-col md:flex-row">
+      <div className="flex gap-x-8 my-24 flex-col md:flex-row">
         {/* Profile Image */}
         <div className="xl:w-1/2 md:w-[50%] w-[80%] my-auto mx-auto">
           <Image
@@ -44,7 +43,7 @@ export default async function AboutMe() {
 
         {/* Text */}
         <div className="xl:w-1/2 md:w-[50%] w-[80%] md:my-auto my-8 mx-auto">
-          <h3 className="text-blue-800/50 text-5xl font-bold uppercase">ABOUT ME</h3>
+          <h3 className="  mb-6 text-blue-800/50 text-5xl font-bold relative uppercase">ABOUT ME</h3>
           <h2 className="text-2xl font-semibold text-slate-800 my-3">{title}</h2>
 
 
@@ -56,21 +55,20 @@ export default async function AboutMe() {
               <button
                 className="flex select-none items-center gap-2 rounded-lg py-2 px-4 text-center align-middle font-sans text-xs font-bold uppercase text-blue-500 transition-all hover:bg-blue-500/10 active:bg-blue-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
                 type="button"
-                data-ripple-dark="true"
               >
                 {about?.linkTitle}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
-                  stroke-width="2"
+                  strokeWidth="2"
                   stroke="currentColor"
                   aria-hidden="true"
                   className="h-4 w-4"
                 >
                   <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                     d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
                   ></path>
                 </svg>

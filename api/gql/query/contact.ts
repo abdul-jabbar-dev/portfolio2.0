@@ -4,6 +4,7 @@ const CONTACT_SECTION = gql`
   query {
     contact {
       icon
+      iconStr
       title
       desc
       id

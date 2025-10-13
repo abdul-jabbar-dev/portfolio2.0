@@ -12,12 +12,14 @@ const SHORT_DYN_DES = gql`
         section
         desc
         icon
+        iconStr
       }
       techStack {
         title
          desc
          url
          icon
+         iconStr
       }
     }
   }

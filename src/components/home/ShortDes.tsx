@@ -12,14 +12,14 @@ export default async function ShortDes() {
     const socialLinks = await Promise.all(
         (hero.socialLinks || []).map(async (link: any) => ({
             ...link,
-            iconUrl: await getValidIconUrl(link?.icon, "link", { size: 40, theme: "stroke" }),
+            iconUrl: await getValidIconUrl(link?.icon, "link", { size: 40, theme: "stroke", iconStr: link?.iconStr }),
         }))
     );
 
     const techStack = await Promise.all(
         (hero.techStack || []).map(async (stack: any) => ({
             ...stack,
-            iconUrl: await getValidIconUrl(stack?.icon, "link", { size: 60, theme: "color" }),
+            iconUrl: await getValidIconUrl(stack?.icon, "link", { size: 60, theme: "color", iconStr: stack?.iconStr }),
         }))
     );
 

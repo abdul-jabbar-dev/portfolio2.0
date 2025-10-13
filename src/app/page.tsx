@@ -1,14 +1,14 @@
- 
+
 import AboutMe from "@/components/home/AboutMe";
 import Contact from "@/components/home/Contact";
 import Experience from "@/components/home/Experience";
 import Projects from "@/components/home/Projects";
-import ShortDes from "@/components/home/ShortDes"; 
-import Skills from "@/components/home/Skills";  
+import ShortDes from "@/components/home/ShortDes";
+import Skills from "@/components/home/Skills";
 import Head from "next/head";
 import React from "react";
- 
-const Home  = ( ) => {
+
+const Home = () => {
 
   return (
     <div id="landBody" className="bg-light">
@@ -72,17 +72,16 @@ const Home  = ( ) => {
 
 
       <div className="">
-        {/* <ShortDescription /> */}
         <ShortDes />
         <AboutMe />
         <Experience />
         <Skills />
-        <Projects /> 
+        <Projects />
         <Contact />
       </div>
 
     </div>
   );
 };
- 
+
 export default Home;

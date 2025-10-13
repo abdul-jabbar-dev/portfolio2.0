@@ -1,15 +1,26 @@
-'use client'
-import TLink from "@/types/documents/link";
+
+import clientServer from "@/lib/apolloClient";
+import API from "../../../api/gql";
 import React from "react";
-import { AiOutlineGithub } from "react-icons/ai";
-import { FaLinkedinIn } from "react-icons/fa";
-const RootFooter = ({ children }: { children: React.ReactNode }) => {
-  const [links, setLinks] = React.useState<TLink[]>([]);
-  React.useEffect(() => {
-    fetch("/api/links.json")
-      .then((res) => res.json())
-      .then((data) => setLinks(data));
-  });
+import ProjectIconLink from "@/components/home/ProjectIconLink";
+import { TechStack } from "@/types/documents/project";
+const RootFooter = async ({ children }: { children: React.ReactNode }) => {
+  // const [links, setLinks] = React.useState<TLink[]>([]);
+  // React.useEffect(() => {
+  //   fetch("/api/links.json")
+  //     .then((res) => res.json())
+  //     .then((data) => setLinks(data));
+  // });
+
+  let footerLinks: TechStack[] = [];
+
+  try {
+    const data = await clientServer.request(API.Query.FOOTER_SECTION_LINKS);
+    footerLinks = (data as any)?.footerLinks || [];
+  } catch (err) {
+    console.error("Failed to fetch footerLinks section:", err);
+  }
+
   return (
     <>
       {children}
@@ -19,28 +30,13 @@ const RootFooter = ({ children }: { children: React.ReactNode }) => {
             Copyright © 2023. All rights are reserved
           </h2>
           <div className="flex gap-x-4">
-            <div
-              onClick={() =>
-                window.open(
-                  links.find((e) => e.link_name.toLowerCase() === "github")
-                    ?.link
-                )
-              }
-              className=" rounded-full hover:bg-slate-900   hover:scale-110  cursor-pointer p-1"
-            >
-              <AiOutlineGithub size={20} color="white" />
-            </div>
-            <div
-              onClick={() =>
-                window.open(
-                  links.find((e) => e.link_name.toLowerCase() === "linkedin")
-                    ?.link
-                )
-              }
-              className=" rounded-full hover:bg-slate-900   hover:scale-110  cursor-pointer p-1"
-            >
-              <FaLinkedinIn size={20} color="white" />
-            </div>
+            {footerLinks.map((link, i) => (
+              <div key={i}
+                className=" rounded-full text-white  hover:scale-110  cursor-pointer p-1"
+              >
+                {<ProjectIconLink tech={link} elementStyle={{ isTitle: false, iconStyle: "!text-white !p-0", parentStyle: " !p-0 !m-0  " }} />}
+              </div>
+            ))}
           </div>
         </div>
       </div>
