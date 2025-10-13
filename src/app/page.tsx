@@ -1,87 +1,64 @@
-
+// src/app/page.tsx
 import AboutMe from "@/components/home/AboutMe";
 import Contact from "@/components/home/Contact";
 import Experience from "@/components/home/Experience";
 import Projects from "@/components/home/Projects";
 import ShortDes from "@/components/home/ShortDes";
 import Skills from "@/components/home/Skills";
-import Head from "next/head";
-import React from "react";
+import CONFIG from "@/config";
+import { Metadata } from "next";
 
-const Home = () => {
-
-  return (
-    <div id="landBody" className="bg-light">
-      <Head>
-        {/* <!-- Primary Meta Tags --> */}
-        <title>Abdul Jabbar - MERN Stack Developer</title>
-        <link
-          rel="shortcut icon"
-          href="/abdul jabbar.ico"
-          type="image/x-icon"
-        />
-        <meta name="title" content="Abdul Jabbar - MERN Stack Developer" />
-        <meta
-          name="keywords"
-          content="Abdul, Jabbar, Abdul Jabbar, Abdul Jabbar dev,Javascript developer, MERN Stack , Developer,Web Developer, Programmer, Full Stack Web Developer"
-        />
-        <meta name="author" content="Abdul Jabbar" />
-        <meta
-          name="description"
-          content="Welcome to the portfolio of Abdul Jabbar, a MERN stack developer. Explore dynamic web apps and elegant solutions crafted using MongoDB, Express.js, React, and Node.js – witness innovation in action."
-        />
-
-        {/* <!-- Open Graph / Facebook --> */}
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:url"
-          content="https://www.facebook.com/abdul.jabbar.dev/"
-        />
-        <meta
-          property="og:title"
-          content="Abdul Jabbar - MERN Stack Developer"
-        />
-        <meta
-          property="og:description"
-          content="Welcome to the portfolio of Abdul Jabbar, a MERN stack developer. Explore dynamic web apps and elegant solutions crafted using MongoDB, Express.js, React, and Node.js – witness innovation in action."
-        />
-        <meta
-          property="og:image"
-          content="https://scontent.fdac99-1.fna.fbcdn.net/v/t39.30808-6/352519807_1637824143328347_7777155772431074976_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=a2f6c7&_nc_eui2=AeHWZcgysg7ShRKHxTIC8vDdeZoi1G8w1q15miLUbzDWrZCzsQvnjlJSmWrruwvcHjLOZfJYbJ_Gz-o7l_G2gE44&_nc_ohc=gwZEmuO5VDIAX9L4nQb&_nc_ht=scontent.fdac99-1.fna&oh=00_AfD27MjP9tqd_Gy8Ein-TUzyAr9Wn2vj6lgKYfVlTrthDw&oe=650192CF"
-        />
-
-        {/* <!-- linkedin --> */}
-        <meta property="linkedin:card" content="summary_large_image" />
-        <meta
-          property="linkedin:url"
-          content="https://www.linkedin.com/in/abdul-jabbar-dev/"
-        />
-        <meta
-          property="linkedin:title"
-          content="Abdul Jabbar - MERN Stack Developer"
-        />
-        <meta
-          property="linkedin:description"
-          content="Welcome to the portfolio of Abdul Jabbar, a MERN stack developer. Explore dynamic web apps and elegant solutions crafted using MongoDB, Express.js, React, and Node.js – witness innovation in action."
-        />
-        <meta
-          property="linkedin:image"
-          content="https://media.licdn.com/dms/image/D5635AQFugmuTnYD68w/profile-framedphoto-shrink_200_200/0/1686497791148?e=1694887200&v=beta&t=dT-ZGSCWDKtsXTLSkMgUjllNavh0eUT0IqP-B_cSe_o"
-        />
-      </Head>
-
-
-      <div className="">
-        <ShortDes />
-        <AboutMe />
-        <Experience />
-        <Skills />
-        <Projects />
-        <Contact />
-      </div>
-
-    </div>
-  );
+export const metadata:Metadata = {
+  title: "Abdul Jabbar - MERN Stack Developer | Full Stack Web Portfolio",
+  description: "Explore the professional portfolio of Abdul Jabbar, a skilled MERN Stack developer. Showcasing innovative web applications built with MongoDB, Express.js, React, and Node.js.",
+  keywords: [
+    "Abdul Jabbar", "MERN Stack Developer", "Full Stack Web Developer",
+    "JavaScript Developer", "React Developer", "Node.js Developer",
+    "Web Developer Portfolio", "Abdul Jabbar dev", "Abdul Jabbar developer"
+  ],
+  authors: [{ name: "Abdul Jabbar", url: "https://abduljabbar.netlify.app/" }],
+  creator: "Abdul Jabbar",
+  applicationName: "Abdul Jabbar Portfolio",
+  metadataBase: new URL("https://abduljabbar.netlify.app/"),
+  alternates: {
+    canonical: "/",
+  },
+  icons: {
+    icon: "/favicon.ico",
+  },
+  openGraph: {
+    title: "Abdul Jabbar - MERN Stack Developer",
+    description: "Professional portfolio of Abdul Jabbar, showcasing web apps and innovative solutions built with the MERN stack.",
+    url: "https://abduljabbar.netlify.app/",
+    siteName: "Abdul Jabbar Portfolio",
+    images: [
+      {
+        url: CONFIG.META.OG_IMAGE,
+        width: 1200,
+        height: 630,
+        alt: "Abdul Jabbar - MERN Stack Developer Portfolio",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Abdul Jabbar - MERN Stack Developer",
+    description: "Professional portfolio of Abdul Jabbar showcasing full-stack web development using the MERN stack.",
+    images: [CONFIG.META.OG_IMAGE],
+    creator: "@AbdulJabbarDev",
+  },
 };
 
-export default Home;
+export default function Home() {
+  return (
+    <div id="landBody" className="bg-light">
+      <ShortDes />
+      <AboutMe />
+      <Experience />
+      <Skills />
+      <Projects />
+      <Contact />
+    </div>
+  );
+}

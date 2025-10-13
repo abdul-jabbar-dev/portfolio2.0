@@ -28,16 +28,17 @@ export default async function ShortDes() {
             {/* Hero Section */}
             <div className="-mt-12 md:mt-28 lg:mt-28 xl:mt-48 flex flex-col md:flex-row justify-center items-center mx-auto">
                 {/* Profile Image */}
-                <div className="xl:w-1/2 md:w-[50%] w-[80%] order-1 xl:order-2 mt-64 my-8 md:my-0">
+                <div className="xl:w-1/2 md:w-1/2 w-4/5 order-1 xl:order-2 mt-64 my-8 md:my-0 flex justify-center">
                     <Image
-                        className="rounded-full mx-auto xl:ml-auto"
+                        className="rounded-full object-cover w-[330px] h-[330px] md:w-[300px] md:h-[300px] sm:w-[250px] sm:h-[250px]"
                         alt={hero.title}
-                        width={300}
-                        height={300}
-                        style={{ width: "70%" }}
                         src={hero.image}
+                        width={330}
+                        height={330}
+                        priority
                     />
                 </div>
+
 
                 {/* Text & Socials */}
                 <div className="xl:w-1/2 md:w-[50%] w-[80%] order-2 xl:order-1">
