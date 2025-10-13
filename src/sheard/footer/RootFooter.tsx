@@ -27,7 +27,7 @@ const RootFooter = async ({ children }: { children: React.ReactNode }) => {
       <div className="py-16  bg-zinc-800">
         <div className="2xl:w-content container mx-auto flex justify-between">
           <h2 className="font-bold text-xl text-slate-300">
-            Copyright © 2023. All rights are reserved
+            Copyright © 2025. All rights are reserved
           </h2>
           <div className="flex gap-x-4">
             {footerLinks.map((link, i) => (

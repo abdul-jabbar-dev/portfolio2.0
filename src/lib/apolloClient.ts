@@ -5,7 +5,7 @@ const clientServer = new GraphQLClient(CONFIG.BACKEND_GRAPHQL_ENDPOINT, {
   fetch: (url, options) =>
     fetch(url, {
       ...options,
-      cache: "no-store", // 🚫 Next.js / Node fetch cache বন্ধ
+      cache: "no-store", 
       
     }),
 });
