@@ -52,13 +52,13 @@ export const metadata:Metadata = {
 
 export default function Home() {
   return (
-    <div id="landBody" className="bg-light">
+   <>
       <ShortDes />
       <AboutMe />
       <Experience />
       <Skills />
       <Projects />
       <Contact />
-    </div>
+    </>
   );
 }

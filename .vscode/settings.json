@@ -1,4 +1,11 @@
 {
+    "compilerOptions": {
+        "types": [
+            "deno.ns",
+            "vite/client",
+            "node"
+        ]
+    },
     "cSpell.words": [
         "fiverr"
     ]
