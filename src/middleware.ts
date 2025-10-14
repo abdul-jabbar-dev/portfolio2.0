@@ -12,7 +12,7 @@ const middleware = async (request: NextRequest) => {
   const token = request.cookies.get(CONFIG.STORAGE.TOKEN_KEY)?.value;
 
   const getData = async () => {
-    const res = await clientServer
+    const res:any = await clientServer
       .setHeaders({
         Authorization: `Bearer ${token}`,
       })
@@ -28,8 +28,8 @@ const middleware = async (request: NextRequest) => {
     try {
       user = await getData();
  
-    } catch (error) {
-      console.log(error.response.errors[0].message || error.message || (error));
+    } catch (error:any) {
+      console.log(error?.response?.errors[0]?.message || error?.message || (error));
     }
   }
 
