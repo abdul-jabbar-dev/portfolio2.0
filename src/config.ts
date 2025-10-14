@@ -5,8 +5,9 @@ const META = {
  
 
 const CONFIG={
-  BACKEND_GRAPHQL_ENDPOINT:  process.env.PG_STRING || "http://localhost:8000/gql",
+  BACKEND_GRAPHQL_ENDPOINT:  process.env.NODE_ENV === "development" ? process.env.PG_STRING : process.env.PG_STRING_PROD ,
   META,
   STORAGE: {TOKEN_KEY: "token"},
 }
+console.log(CONFIG,process.env.NODE_ENV );
 export default CONFIG;
