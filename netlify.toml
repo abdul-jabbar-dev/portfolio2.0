@@ -5,7 +5,7 @@
 [build.environment]
   NODE_VERSION = "20"
   PG_STRING = "http://localhost:8000/gql"
-  NEXT_USE_NETLIFY_EDGE = "true"
+  NEXT_USE_NETLIFY_EDGE = "false"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
