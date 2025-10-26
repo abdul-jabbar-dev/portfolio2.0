@@ -1,13 +1,8 @@
 [build]
   command = "npm run build"
-  publish = ".next"
-  functions = ".netlify/functions/"
+  publish = ".next" 
 
 [build.environment]
-  NODE_VERSION = "20"
-  NEXT_USE_NETLIFY_EDGE = "false"
   PG_STRING = "http://localhost:8000/gql"
   PG_STRING_PROD = "https://abduljabbar-portfolio.deno.dev/gql"
-
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
+ 
