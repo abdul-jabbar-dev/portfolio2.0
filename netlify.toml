@@ -3,9 +3,8 @@
   publish = ".next"
 
 [build.environment]
-  NODE_VERSION = "20"
-  PG_STRING = "http://localhost:8000/gql"
-  NEXT_USE_NETLIFY_EDGE = "false"
+  NODE_VERSION = "20" 
+  PG_STRING_PROD = "https://abduljabbar-portfolio.deno.dev/gql"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
