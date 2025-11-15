@@ -25,7 +25,7 @@ export default function Skill({ category, id }: { category: TTecnhicalSkills; id
     return (
         <div>
             <details open={id === 0} className="my-2 ring-1 ring-black/5 open:shadow-lg rounded-xl">
-                <summary className="cursor-pointer leading-6 p-6 font-bold text-2xl text-slate-700 uppercase relative select-none">
+                <summary className="cursor-pointer leading-6 p-6 font-bold text-2xl text-slate-600 whitespace-pre-line  uppercase relative select-none">
                     <span>{category.fieldName}</span>
                 </summary>
                 <div className="mt-3 text-sm leading-6 text-slate-600 px-6">

@@ -43,11 +43,11 @@ export default async function AboutMe() {
 
         {/* Text */}
         <div className="xl:w-1/2 md:w-[50%] w-[80%] md:my-auto my-8 mx-auto">
-          <h3 className="  mb-6 text-blue-800/50 text-5xl font-bold relative uppercase">ABOUT ME</h3>
-          <h2 className="text-2xl font-semibold text-slate-800 my-3">{title}</h2>
+          <h3 className=" mb-6 text-blue-800/50 text-5xl font-bold relative uppercase">ABOUT ME</h3>
+          <h2 className="text-2xl font-semibold text-slate-800 mt-3">{title}</h2>
 
 
-          <div className=" pt-0">
+         {about?.link&& <div className=" pt-0">
             <a
               className="!font-medium !text-blue-gray-900 !transition-colors hover:!text-blue-500"
               href={about?.link}
@@ -74,7 +74,7 @@ export default async function AboutMe() {
                 </svg>
               </button>
             </a>
-          </div>
+          </div>}
           <p className="text-slate-600 whitespace-pre-line">{description}</p>
         </div>
       </div>

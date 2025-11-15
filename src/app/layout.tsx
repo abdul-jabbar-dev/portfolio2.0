@@ -17,11 +17,11 @@ export default function RootLayout({
       <body>
 
         <RootNav>
-          {/* <RootFooter> */}
+          <RootFooter>
             <div id="landBody" className="bg-light">
               {children}
             </div>
-          {/* </RootFooter> */}
+          </RootFooter>
         </RootNav>
       </body>
     </html>

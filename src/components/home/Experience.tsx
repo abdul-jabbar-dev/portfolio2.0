@@ -3,7 +3,7 @@ import { ExperienceType } from "@/types/documents/experience";
 import clientServer from "@/lib/apolloClient";
 import API from "../../../api/gql";
 
-export default async function Experience() { 
+export default async function Experience() {
   let experiences: ExperienceType[] = [];
 
   try {
@@ -31,21 +31,23 @@ export default async function Experience() {
           .sort((a, b) => b.order - a.order)
           .map((exp, i) => (
             <div
-              className="flex border-b-[1px] md:pb-16 pb-8 md:items-center items-start px-8 md:flex-row flex-col justify-between"
+              className="flex border-b-[1px] md:pb-16 pb-8 gap-x-2 md:items-center items-start px-8 pr-0 md:flex-row flex-col justify-between"
               key={i}
             >
               <div className="order-0 max-w-[320px] w-full">
-                <h2 className="text-3xl">{exp.jobPosition}</h2>
+                <h2 className="text-3xl  text-slate-700">{exp.jobPosition}</h2>
                 <h2 className="text-md text-gray-800/80 font-normal mt-[6px] ">{exp.companyName}</h2>
+                <br />
+                <h3 className="text-xl w-fit order-1 md:order-2  text-slate-700">
+                  {exp.startDate} - {exp.endDate}
+                </h3>
               </div>
 
-              <p className="text-xl order-2 py-4 md:order-1 md:w-2/5 w-6/8 font-normal md:py-0">
+              <p className="text-lg  text-slate-700 whitespace-pre-line order-2 py-4 md:order-1  w-full font-normal md:py-0">
                 {exp.desc}
               </p>
 
-              <h3 className="text-xl w-fit font-light order-1 md:order-2 md:text-black text-gray-500">
-                {exp.startDate} - {exp.endDate}
-              </h3>
+
             </div>
           ))}
       </div>

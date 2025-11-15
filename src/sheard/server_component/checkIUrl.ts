@@ -20,7 +20,7 @@ export async function getValidIconUrl(
   const tryFetch = async (type: string, name: string) => {
     const url = makeUrl(type, size, name);
     try {
-      const res = await fetch(url, { cache: "no-store" }).catch(() => null);
+      const res = await fetch(url, { cache: "force-cache",  }).catch(() => null);
       if (res?.ok) return url;
     } catch (e){ 
     }

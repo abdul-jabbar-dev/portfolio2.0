@@ -7,7 +7,7 @@ import ShortDes from "@/components/home/ShortDes";
 import Skills from "@/components/home/Skills";
 import CONFIG from "@/config";
 import { Metadata } from "next";
-
+export const dynamic = "force-static";
 export const metadata:Metadata = {
   title: "Abdul Jabbar - MERN Stack Developer | Full Stack Web Portfolio",
   description: "Explore the professional portfolio of Abdul Jabbar, a skilled MERN Stack developer. Showcasing innovative web applications built with MongoDB, Express.js, React, and Node.js.",

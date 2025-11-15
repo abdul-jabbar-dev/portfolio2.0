@@ -11,6 +11,7 @@ const SHORT_DYN_DES = gql`
         title
         section
         desc
+        url
         icon
         iconStr
       }

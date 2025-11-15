@@ -9,10 +9,10 @@ export default function Project({
   project: TProject
 }) {
   return (
-    <div className="flex md:flex-row gap-x-6 flex-col my-6 w-full items-center ">
+    <div className="flex md:flex-row gap-x-6 flex-col my-10 w-full items-center ">
       <div
         className={"py-6 md:py-0 md:w-5/12  ".concat(Number(project.id) % 2 == 0 ? "" : "  md:order-1")}>
-        <div className="w-[90%]">
+        <div className="w-full">
           <h2 className="font-bold text-2xl text-slate-700">{project.title}</h2>
           <div className="flex justify-start my-5 gap-x-8">
             {project.projectTools.map((usedTech) => (
@@ -21,7 +21,7 @@ export default function Project({
               </span>
             ))}
           </div>
-          <p className="my-3 text-slate-500 font-semibold text-lg ">
+          <p className="my-3 text-slate-600 whitespace-pre-line text-lg ">
             {project.desc}
           </p>
 
