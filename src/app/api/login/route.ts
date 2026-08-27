@@ -3,8 +3,7 @@ import { NextResponse } from "next/server";
 
 export async function POST(req: Request) {
     const { email, password } = await req.json();
-    // backend call
-    console.log(email, password);
+    // backend call 
     const token = "backend_generated_token";
 
     const res = NextResponse.json({ success: true });

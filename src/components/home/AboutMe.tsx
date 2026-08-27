@@ -8,6 +8,7 @@ export default async function AboutMe() {
 
   try {
     const data = await clientServer.request(API.Query.ABOUT_SECTION);
+    console.log(data)
     about = (data as any)?.about;
   } catch (err) {
     console.error("Failed to fetch about section:", err);
@@ -47,7 +48,7 @@ export default async function AboutMe() {
           <h2 className="text-2xl font-semibold text-slate-800 mt-3">{title}</h2>
 
 
-         {about?.link&& <div className=" pt-0">
+          {about?.link && <div className=" pt-0">
             <a
               className="!font-medium !text-blue-gray-900 !transition-colors hover:!text-blue-500"
               href={about?.link}

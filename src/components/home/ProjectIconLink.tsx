@@ -41,7 +41,7 @@ const ProjectIconLink = ({
             }
         };
         fetchIcon();
-    }, [tech?.icon, tech?.iconStr]); 
+    }, [tech?.icon, tech?.iconStr, fallbackIcon]); 
     return (
         <div
             onClick={() => window.open(tech?.url, "_blank")}

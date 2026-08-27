@@ -13,7 +13,7 @@ export default async function Skills() {
 
   try {
     const data = await clientServer.request(API.Query.TECHNICAL_SKILLS);
-    experiences = (data as any)?.technicalSkills || []; 
+    experiences = (data as any)?.technicalSkills || [];
   } catch (err) {
     console.error("Failed to fetch experience section:", err);
   }
@@ -26,7 +26,7 @@ export default async function Skills() {
       {experiences.map((category: TTecnhicalSkills, i: any) => (
         <Skill
           key={i}
-          id={i} 
+          id={i}
           category={category}
         />
       ))}

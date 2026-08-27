@@ -3,7 +3,7 @@ import type { NextRequest } from "next/server";
 import clientServer from "./lib/apolloClient";
 import API from "../api/gql";
 import CONFIG from "./config";
-const protectedRoutes = ["/edit", "/profile", "/admin"];
+const protectedRoutes = ["/edit", "/profile", "/admin", "/dashboard"];
 
 const middleware = async (request: NextRequest) => {
   let user;
@@ -12,12 +12,12 @@ const middleware = async (request: NextRequest) => {
   const token = request.cookies.get(CONFIG.STORAGE.TOKEN_KEY)?.value;
 
   const getData = async () => {
-    const res:any = await clientServer
+    const res: any = await clientServer
       .setHeaders({
-        Authorization: `Bearer ${token}`,
+        Cookie: `token=${token}`,
       })
       .request(API.Query.GET_ME);
- 
+
     if (res?.getMe?.id) {
       return res?.getMe;
     }
@@ -26,24 +26,29 @@ const middleware = async (request: NextRequest) => {
 
   if (token) {
     try {
-      user = await getData();
- 
-    } catch (error:any) {
+      const data = await getData();
+      user = data;
+    } catch (error: any) {
       console.log(error?.response?.errors[0]?.message || error?.message || (error));
     }
   }
 
 
-  if (protectedRoutes.some((path) => pathname.startsWith(path)) && !user?.id) {
+  if (protectedRoutes.some((path) => pathname.startsWith(path)) && (!user?.id || !token)) {
     const loginUrl = new URL("/login", request.url);
     return NextResponse.redirect(loginUrl);
+  }
+
+  if (pathname.startsWith("/login") && user?.id && token) {
+    const dashboardUrl = new URL("/dashboard", request.url);
+    return NextResponse.redirect(dashboardUrl);
   }
 
   return NextResponse.next();
 };
 
 export default middleware;
-// কোন routes এ middleware চলবে সেটা define করো
+
 export const config = {
-  matcher: ["/dashboard/:path*", "/edit/:path*", "/admin/:path*"],
+  matcher: ["/dashboard/:path*", "/edit/:path*", "/admin/:path*", "/dashboard", "/login"],
 };

@@ -1,9 +1,8 @@
 import CONFIG from "@/config";
 
 export const setToken = (token: string) => {
-    sessionStorage.setItem(CONFIG.STORAGE.TOKEN_KEY, token);
-    document.cookie = `${CONFIG.STORAGE.TOKEN_KEY}=${token}; path=/;`;
+    document.cookie = `${CONFIG.STORAGE.TOKEN_KEY}=${token}; path=/; max-age=${60 * 60 * 24 * 7};`;
 }
 export const getToken = () => {
-    return sessionStorage.getItem(CONFIG.STORAGE.TOKEN_KEY);
+    return document.cookie.split(";").map(c => c.trim()).find((cookie) => cookie.startsWith(`${CONFIG.STORAGE.TOKEN_KEY}=`))?.split("=")[1];
 }

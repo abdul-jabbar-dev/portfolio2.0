@@ -5,15 +5,15 @@ import Project from "./Project";
 import clientServer from "@/lib/apolloClient";
 import API from "../../../api/gql";
 export default async function Projects() {
-  let projectList: TProject[] = []; 
+  let projectList: TProject[] = [];
   try {
     const data = await clientServer.request(API.Query.PROJECTS);
     projectList = (data as any)?.projects || [];
- 
+
   } catch (err) {
     console.error("Failed to fetch experience section:", err);
   }
- 
+
   return (
     <div className="2xl:w-content container mx-auto my-24">
       <div className="">
@@ -23,7 +23,7 @@ export default async function Projects() {
         </h3>
         <div className="flex  px-4 flex-col gap-y-10">
           {projectList.map((project, i) => (
-            <Project key={i}   project={project} />
+            <Project key={i} project={project} />
           ))}
         </div>
       </div>

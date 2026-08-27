@@ -3,15 +3,19 @@ import clientServer from "@/lib/apolloClient";
 import React, { useState } from "react";
 import API from "../../../api/gql";
 import Loader from "@/sheard/components/Loader";
-import { setToken } from "@/utils/storage";
-
+import { getToken, setToken } from "@/utils/storage";
+import { RLogin } from "@/types/response/login";
+import { useRouter} from 'next/navigation';
+import { useMyContext } from "@/hook/Context";
 const Page = () => {
     const [selected, setSelected] = useState<"me" | "notMe">("notMe");
     const [data, setData] = useState("");
     const [inputError, setInputError] = useState('');
     const [loginError, setLoginError] = useState('');
     const [loading, setLoading] = useState(false);
-
+    const { setUser, user } = useMyContext()
+    const router = useRouter();
+ 
     const submitData = async (e: React.FormEvent) => {
         e.preventDefault();
         setLoading(true);
@@ -25,10 +29,15 @@ const Page = () => {
         const loginData = { type: selected, credential: data };
 
         try {
-            const res: any = await clientServer.request(API.Mutation.LOGIN_MUTATION, loginData);
+            const res: RLogin = await clientServer.request(API.Mutation.LOGIN_MUTATION, loginData);
             if (res?.login?.token && typeof res?.login?.token === "string") {
                 setToken(res?.login?.token);
                 setLoginError("");
+                if (res?.login?.user.type === "me") {
+                    setUser(res?.login?.user)
+                    router.push("/dashboard")
+
+                }
             } else {
                 setLoginError("login Failed");
             }

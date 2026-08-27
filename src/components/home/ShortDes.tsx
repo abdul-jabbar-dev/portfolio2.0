@@ -1,4 +1,3 @@
-// components/ShortDes.tsx
 import clientServer from "@/lib/apolloClient";
 import Image from "next/image";
 import API from "../../../api/gql";
@@ -7,7 +6,6 @@ import { getValidIconUrl } from "@/sheard/server_component/checkIUrl";
 export default async function ShortDes() {
     const data = await clientServer.request(API.Query.SHORT_DYN_DES);
     const { hero } = data as any;
-    // ✅ Preprocess all icon URLs before render
     const socialLinks = await Promise.all(
         (hero.socialLinks || []).map(async (link: any) => ({
             ...link,
@@ -21,7 +19,7 @@ export default async function ShortDes() {
             iconUrl: await getValidIconUrl(stack?.icon, "link", { size: 60, theme: "color", iconStr: stack?.iconStr }),
         }))
     );
-console.log(socialLinks)
+
     return (
         <div className="2xl:w-content container flex flex-col justify-center mx-auto mb-32">
             {/* Hero Section */}
@@ -60,7 +58,7 @@ console.log(socialLinks)
                         {/* Resume */}
                         <a
                             download
-                             target="_blank" 
+                            target="_blank"
                             href={hero.resume}
                             className="text-slate-800 ml-6 cursor-pointer hover:text-slate-900 hover:scale-105 active:scale-100 transition-all delay-150 text-lg font-bold uppercase"
                         >

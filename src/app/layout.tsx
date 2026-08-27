@@ -1,6 +1,7 @@
 import "@/styles/globals.css";
 import RootNav from "@/sheard/navbar/RootNav";
 import RootFooter from "@/sheard/footer/RootFooter";
+import { ContextProvider } from "@/hook/Context";
 
 export const metadata = {
   title: "Abdul Jabbar - MERN Stack Developer",
@@ -19,7 +20,9 @@ export default function RootLayout({
         <RootNav>
           <RootFooter>
             <div id="landBody" className="bg-light">
-              {children}
+              <ContextProvider>
+                {children}
+              </ContextProvider>
             </div>
           </RootFooter>
         </RootNav>
