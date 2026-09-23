@@ -31,7 +31,10 @@ const clientServer = new GraphQLClient(CONFIG.BACKEND_GRAPHQL_ENDPOINT, {
         headers.set("Cookie", `token=${token}`);
         headers.set("Authorization", `Bearer ${token}`);
       }
-    } catch (error) {
+    } catch (error: any) {
+      if (error?.digest === "DYNAMIC_SERVER_USAGE") {
+        throw error;
+      }
       console.log("Error reading cookies in server component:", error);
     }
 
