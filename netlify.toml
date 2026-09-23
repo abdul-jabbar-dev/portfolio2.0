@@ -6,7 +6,8 @@
   
 [build.environment]
   NODE_VERSION = "20" 
-  DENO_BACKEND_URL = "https://portfolio-api-fhnyca9dqtjb.abdul-jabbar-dev.deno.net"
+  NEXT_PUBLIC_BACKEND_URL="https://portfolio-api-fhnyca9dqtjb.abdul-jabbar-dev.deno.net"
+  BACKEND_URL="https://portfolio-api-fhnyca9dqtjb.abdul-jabbar-dev.deno.net"
   NEXT_DISABLE_NETLIFY_EDGE = "true"
 
 [[plugins]]
