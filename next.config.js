@@ -1,9 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: false,
-  experimental: {
-    runtime: "nodejs",
-  },
   images: {
     unoptimized: true,
     domains: [
