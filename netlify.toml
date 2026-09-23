@@ -2,11 +2,11 @@
   command = "npm run build"
   publish = ".next" 
   functions = "netlify/functions"
-  
+
   
 [build.environment]
   NODE_VERSION = "20" 
-  PG_STRING = "https://abduljabbar-portfolio.deno.dev"
+  PG_STRING = "https://portfolio-api-fhnyca9dqtjb.abdul-jabbar-dev.deno.net"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
