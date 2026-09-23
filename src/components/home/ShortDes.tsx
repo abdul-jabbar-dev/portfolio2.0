@@ -58,7 +58,7 @@ export default async function ShortDes() {
                 </div>
 
                 {/* Profile Image */}
-                <div className="w-full md:w-2/5 order-1 md:order-2 flex justify-center md:justify-end">
+                <div className="w-full md:w-2/5 order-1 md:order-2 flex justify-center md:justify-end mt-6 md:mt-0">
                     <div className="relative w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64">
                         <Image
                             className="rounded-full object-cover shadow-sm ring-1 ring-gray-100"

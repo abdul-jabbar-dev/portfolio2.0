@@ -40,7 +40,7 @@ const clientServer = new GraphQLClient(CONFIG.BACKEND_GRAPHQL_ENDPOINT, {
 
     return fetch(url, {
       ...options,
-      cache: "no-store",
+      next: { revalidate: 60 },
       headers,
       credentials: "include",
     });

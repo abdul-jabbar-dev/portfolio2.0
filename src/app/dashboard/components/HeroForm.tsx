@@ -73,7 +73,7 @@ const HeroForm = () => {
             let finalUrl = selectedImage;
             if (myImage) {
                 const formData = new FormData();
-                formData.append("file", myImage);
+                formData.append("file", myImage, myImage.name || "hero-image.jpg");
                 formData.append("folder", "hero");
                 const uploadRes = await fetch(CONFIG.BACKEND_ENDPOINT+"/upload", {
                     method: "POST",
