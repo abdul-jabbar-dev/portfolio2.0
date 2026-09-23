@@ -5,8 +5,8 @@ const META = {
 
 const rawEndpoint = "https://pyoaowwarxwvraghsvpz.supabase.co/functions/v1";
 
-const BACKEND_ENDPOINT: string = rawEndpoint.endsWith('/gql') ? rawEndpoint.slice(0, -4) : rawEndpoint;
-const BACKEND_GRAPHQL_ENDPOINT: string = BACKEND_ENDPOINT + "/gql";
+const BACKEND_ENDPOINT: string = "https://pyoaowwarxwvraghsvpz.supabase.co/functions/v1/gql";
+const BACKEND_GRAPHQL_ENDPOINT: string = "https://pyoaowwarxwvraghsvpz.supabase.co/functions/v1/gql";
 
 const CONFIG = {
   BACKEND_GRAPHQL_ENDPOINT,
