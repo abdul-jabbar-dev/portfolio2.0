@@ -6,7 +6,7 @@ const isDev = process.env.NODE_ENV !== "production";
 
 const rawEndpoint = isDev
   ? process.env.PG_STRING ?? "http://localhost:8000"
-  : process.env.PG_STRING_PROD ?? "https://portfolio-api-fhnyca9dqtjb.abdul-jabbar-dev.deno.net";
+  : "https://portfolio-api-fhnyca9dqtjb.abdul-jabbar-dev.deno.net";
 
 const BACKEND_ENDPOINT: string = rawEndpoint.endsWith('/gql') ? rawEndpoint.slice(0, -4) : rawEndpoint;
 const BACKEND_GRAPHQL_ENDPOINT: string = BACKEND_ENDPOINT + "/gql";
