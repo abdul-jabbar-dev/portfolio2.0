@@ -4,7 +4,7 @@ const META = {
 };
  
 
-const BACKEND_ENDPOINT: string = process.env.NEXT_PUBLIC_BACKEND_URL || "http://127.0.0.1:8000";
+const BACKEND_ENDPOINT: string = "https://portfolio-server-rtf8nbjayvnt.abdul-jabbar-dev.deno.net";
 const BACKEND_GRAPHQL_ENDPOINT: string = BACKEND_ENDPOINT + "/gql";
 
 const CONFIG = {

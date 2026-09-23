@@ -1,8 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: false,
-  images: {
-    unoptimized: true,
+  images: { 
     domains: [
       "avatars.githubusercontent.com",
       "img.icons8.com",

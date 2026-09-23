@@ -1,0 +1,28 @@
+
+> portfolio_2.o@2.0.1 dev
+> next dev
+
+  ▲ Next.js 13.5.11
+  - Local:        http://localhost:3000
+  - Environments: .env
+
+ ✓ Ready in 1655ms
+ ✓ Compiled /page in 2.7s (1061 modules)
+Server Component - token from cookies: Null
+ ✓ Compiled in 239ms (244 modules)
+Server Component - token from cookies: Null
+Server Component - token from cookies: Null
+Server Component - token from cookies: Null
+Server Component - token from cookies: Null
+Server Component - token from cookies: Null
+Server Component - token from cookies: Null
+{
+  about: {
+    title: 'A dedicated Front-End Developer based in Dhaka, Bangladesh 📍',
+    desc: "🚀 Hi, I'm Abdul Jabbar, a results-driven MERN Stack Developer hailing from the vibrant tech scene of Bangladesh 🇧🇩. With over 2 years of dedicated experience, I'm your go-to partner for building dynamic and user-friendly web applications. My passion lies in translating ideas into elegant, efficient, and scalable solutions that make an impact. Let's collaborate to bring your digital dreams to life!",
+    img: '/media/aboutImg.jpg',
+    link: 'asdfasf',
+    linkTitle: '',
+    descPosition: 'left'
+  }
+}
