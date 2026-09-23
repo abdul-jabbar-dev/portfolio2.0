@@ -7,7 +7,7 @@ const nextConfig = {
       "avatars.githubusercontent.com",
       "img.icons8.com",
       "abduljabbar.netlify.app",
-      "https://pyoaowwarxwvraghsvpz.supabase.co",
+      "pyoaowwarxwvraghsvpz.supabase.co",
       "*",
       "www.smartaddons.com",
       "res.cloudinary.com",
