@@ -5,39 +5,49 @@ import ProjectIconLink from "./ProjectIconLink";
 
 export default function Project({
   project,
+  index
 }: {
-  project: TProject
+  project: TProject,
+  index: number
 }) {
+  const isEven = index % 2 === 0;
+
   return (
-    <div className="flex md:flex-row gap-x-6 flex-col my-10 w-full items-center ">
+    <div className="group flex flex-col md:flex-row gap-8 lg:gap-12 w-full items-center">
       <div
-        className={"py-6 md:py-0 md:w-5/12  ".concat(Number(project.id) % 2 == 0 ? "" : "  md:order-1")}>
-        <div className="w-full">
-          <h2 className="font-bold text-2xl text-slate-700">{project.title}</h2>
-          <div className="flex justify-start my-5 gap-x-8">
-            {project.projectTools.map((usedTech) => (
-              <span key={usedTech} className=" text-slate-500 font-semibold ">
-                {usedTech}
-              </span>
+        className={`w-full md:w-5/12 flex flex-col ${isEven ? 'md:order-1' : 'md:order-2'}`}
+      >
+        <h3 className="text-xs font-semibold text-gray-400 mb-1">{project.section}</h3>
+        <h4 className="font-semibold text-xl text-slate-800 mb-4 group-hover:text-blue-600 transition-colors">{project.title}</h4>
+        
+        <p className="text-base text-gray-500 leading-relaxed whitespace-pre-line mb-6 font-light">
+          {project.desc}
+        </p>
+
+        <div className="flex flex-wrap gap-2 mb-6">
+          {project.projectTools && project.projectTools.map((usedTech) => (
+            <span key={usedTech} className="text-xs font-medium text-slate-500 bg-gray-100 px-2.5 py-1 rounded-md">
+              {usedTech}
+            </span>
+          ))}
+        </div>
+
+        {project.techStack && project.techStack.length > 0 && (
+          <div className="flex gap-4 items-center">
+            {project.techStack.map((tech, i) => (
+              <ProjectIconLink tech={tech} key={i} />
             ))}
           </div>
-          <p className="my-3 text-slate-600 whitespace-pre-line text-lg ">
-            {project.desc}
-          </p>
-
-          <div className="flex space-x-6 justify-start">
-
-            {project.techStack.length > 0 && project.techStack.map((tech, i) => <ProjectIconLink tech={tech} key={i} />)}
-          </div>
-
-        </div>
+        )}
       </div>
+
       <div
-        className={"md:w-7/12 w-full h-96 overflow-hidden screen".concat(Number(project.id) % 2 == 0 ? " md:order-2" : " ")}>
+        className={`w-full md:w-7/12 relative h-64 sm:h-80 md:h-96 rounded-2xl overflow-hidden shadow-sm ring-1 ring-gray-100 bg-gray-100 ${isEven ? 'md:order-2' : 'md:order-1'}`}
+      >
         <Image
-          width={900}
-          height={800}
-          style={{ width: "100%" }}
+          fill
+          sizes="(max-width: 768px) 100vw, 60vw"
+          className="object-cover transform group-hover:scale-105 transition-transform duration-700"
           src={project.img}
           alt={project.title}
         />

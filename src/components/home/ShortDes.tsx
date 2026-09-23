@@ -21,67 +21,73 @@ export default async function ShortDes() {
     );
 
     return (
-        <div className="2xl:w-content container flex flex-col justify-center mx-auto mb-32">
+        <div className="2xl:w-content container flex flex-col justify-center mx-auto mb-20 px-6 sm:px-12">
             {/* Hero Section */}
-            <div className="-mt-12 md:mt-28 lg:mt-28 xl:mt-48 flex flex-col md:flex-row justify-center items-center mx-auto">
-                {/* Profile Image */}
-                <div className="xl:w-1/2 md:w-1/2 w-4/5 order-1 xl:order-2 mt-64 my-8 md:my-0 flex justify-center">
-                    <Image
-                        className="rounded-full object-cover  w-[330px] h-[330px] md:w-[300px] md:h-[300px] sm:w-[250px] sm:h-[250px]"
-                        alt={hero.title}
-                        src={hero.image}
-                        // src={'https://res.cloudinary.com/dnkwv76h3/image/upload/v1763209797/portfolio/projects/bjjsr6iuns9kkwtbhl4v.jpg'}
-                        width={330}
-                        height={330}
-                        priority
-                    />
-                </div>
-
-
+            <div className="mt-16 md:mt-24 lg:mt-32 flex flex-col md:flex-row justify-center items-center gap-12 max-w-5xl mx-auto w-full">
                 {/* Text & Socials */}
-                <div className="xl:w-1/2 md:w-[50%] w-[80%] order-2 xl:order-1">
-                    <h1 className="text-5xl my-5 mx-auto text-slate-900 font-extrabold">{hero.title}</h1>
-                    <p className="text-lg mx-auto text-slate-700 text-justify">{hero.description}</p>
+                <div className="w-full md:w-3/5 order-2 md:order-1 flex flex-col items-center md:items-start text-center md:text-left">
+                    <h1 className="text-3xl md:text-4xl lg:text-5xl text-slate-800 font-semibold tracking-tight mb-4">{hero.title}</h1>
+                    <p className="text-base text-gray-500 leading-relaxed max-w-2xl">{hero.description}</p>
 
-                    {/* Social Links */}
-                    <div className="flex gap-x-2 my-3 opacity-80">
+                    {/* Social Links & Resume */}
+                    <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 mt-8">
                         {socialLinks.map((link, i) => (
-                            <a href={link.url} target="_blank" key={i}><Image
-                                src={link.iconUrl}
-                                alt={link.title}
-                                width={60}
-                                height={60}
-                                className="cursor-pointer w-8 h-8 hover:rounded-full hover:bg-gray-300"
-                            /></a>
+                            <a href={link.url} target="_blank" key={i} className="opacity-60 hover:opacity-100 transition-opacity duration-300">
+                                <Image
+                                    src={link.iconUrl}
+                                    alt={link.title}
+                                    width={24}
+                                    height={24}
+                                    className="cursor-pointer grayscale hover:grayscale-0 transition-all duration-300"
+                                />
+                            </a>
                         ))}
+
+                        <div className="w-px h-6 bg-gray-200 hidden sm:block mx-2"></div>
 
                         {/* Resume */}
                         <a
                             download
                             target="_blank"
                             href={hero.resume}
-                            className="text-slate-800 ml-6 cursor-pointer hover:text-slate-900 hover:scale-105 active:scale-100 transition-all delay-150 text-lg font-bold uppercase"
+                            className="text-sm font-medium text-slate-600 border border-gray-200 px-5 py-2 rounded-full hover:bg-gray-50 hover:text-slate-900 transition-all duration-300"
                         >
-                            My Resume
+                            View Resume
                         </a>
+                    </div>
+                </div>
+
+                {/* Profile Image */}
+                <div className="w-full md:w-2/5 order-1 md:order-2 flex justify-center md:justify-end">
+                    <div className="relative w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64">
+                        <Image
+                            className="rounded-full object-cover shadow-sm ring-1 ring-gray-100"
+                            alt={hero.title}
+                            src={hero.image}
+                            fill
+                            sizes="(max-width: 768px) 192px, 256px"
+                            priority
+                        />
                     </div>
                 </div>
             </div>
 
             {/* Tech Stack */}
-            <div className="flex items-center md:flex-row my-10 justify-center md:justify-start flex-col">
-                <h3 className="text-blue-800 min-w-max text-lg font-bold uppercase">
-                    Tech stack &nbsp;&nbsp;&nbsp;&nbsp;|
+            <div className="mt-20 flex flex-col items-center">
+                <h3 className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-6">
+                    Tech Stack
                 </h3>
-                <div className="flex gap-x-6 px-6 w-full justify-center md:justify-start">
+                <div className="flex flex-wrap gap-6 justify-center max-w-3xl opacity-70 hover:opacity-100 transition-opacity duration-500">
                     {techStack.map((stack, i) => (
-                        <Image
-                            key={i}
-                            src={stack.iconUrl}
-                            alt={stack.title}
-                            width={38}
-                            height={38}
-                        />
+                        <div key={i} className="group relative">
+                            <Image
+                                src={stack.iconUrl}
+                                alt={stack.title}
+                                width={28}
+                                height={28}
+                                className="grayscale group-hover:grayscale-0 transition-all duration-300"
+                            />
+                        </div>
                     ))}
                 </div>
             </div>

@@ -29,7 +29,7 @@ const middleware = async (request: NextRequest) => {
       const data = await getData();
       user = data;
     } catch (error: any) {
-      console.log(error?.response?.errors[0]?.message || error?.message || (error));
+      console.log(error?.response?.errors?.[0]?.message || error?.message || (error));
     }
   }
 

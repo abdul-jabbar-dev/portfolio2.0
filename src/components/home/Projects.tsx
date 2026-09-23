@@ -1,32 +1,32 @@
-
 import TProject from "@/types/documents/project";
 import React from "react";
 import Project from "./Project";
 import clientServer from "@/lib/apolloClient";
 import API from "../../../api/gql";
+
 export default async function Projects() {
-  let projectList: TProject[] = [];
-  try {
-    const data = await clientServer.request(API.Query.PROJECTS);
-    projectList = (data as any)?.projects || [];
+    let projectList: TProject[] = [];
+    try {
+        const data = await clientServer.request(API.Query.PROJECTS);
+        projectList = (data as any)?.projects || [];
+    } catch (err) {
+        console.error("Failed to fetch projects section:", err);
+    }
 
-  } catch (err) {
-    console.error("Failed to fetch experience section:", err);
-  }
+    return (
+        <section className="py-20 bg-gray-50/30 border-t border-gray-100">
+            <div className="container mx-auto px-6 sm:px-12 max-w-5xl">
+                <div className="mb-12">
+                    <h2 className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-2">Selected Works</h2>
+                    <h3 className="text-2xl md:text-3xl font-medium text-slate-800">Projects</h3>
+                </div>
 
-  return (
-    <div className="2xl:w-content container mx-auto my-24">
-      <div className="">
-        <h3 className="  mb-6 text-blue-800/50 text-5xl font-bold relative uppercase">
-
-          PORTFOLIO
-        </h3>
-        <div className="flex  px-4 flex-col gap-y-10">
-          {projectList.map((project, i) => (
-            <Project key={i} project={project} />
-          ))}
-        </div>
-      </div>
-    </div>
-  );
+                <div className="flex flex-col gap-y-16">
+                    {projectList.sort((a, b) => b.order - a.order).map((project, i) => (
+                        <Project key={i} project={project} index={i} />
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
 }

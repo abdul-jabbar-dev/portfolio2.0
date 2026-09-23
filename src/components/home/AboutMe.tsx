@@ -28,57 +28,56 @@ export default async function AboutMe() {
   `;
 
   return (
-    <div className="2xl:w-content container mx-auto">
-      <div className="flex gap-x-8 my-24 flex-col md:flex-row">
-        {/* Profile Image */}
-        <div className="xl:w-1/2 md:w-[50%] w-[80%] my-auto mx-auto">
-          <Image
-            height={600}
-            width={600}
-            className="rounded-2xl"
-            style={{ width: "100%" }}
-            src={imgSrc}
-            alt={name}
-          />
-        </div>
+        <section className="py-20 bg-gray-50/30 border-y border-gray-100">
+            <div className="container mx-auto px-6 sm:px-12 max-w-5xl">
+                <div className="flex flex-col md:flex-row items-center gap-16">
+                    {/* Profile Image */}
+                    <div className="w-full md:w-2/5 flex justify-center md:justify-end">
+                        <div className="relative w-64 h-80 rounded-2xl overflow-hidden shadow-sm ring-1 ring-gray-100">
+                            <Image
+                                fill
+                                sizes="(max-width: 768px) 100vw, 40vw"
+                                className="object-cover"
+                                src={imgSrc}
+                                alt={name}
+                            />
+                        </div>
+                    </div>
 
-        {/* Text */}
-        <div className="xl:w-1/2 md:w-[50%] w-[80%] md:my-auto my-8 mx-auto">
-          <h3 className=" mb-6 text-blue-800/50 text-5xl font-bold relative uppercase">ABOUT ME</h3>
-          <h2 className="text-2xl font-semibold text-slate-800 mt-3">{title}</h2>
+                    {/* Text */}
+                    <div className="w-full md:w-3/5">
+                        <h2 className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-2">About Me</h2>
+                        <h3 className="text-xl md:text-2xl font-medium text-slate-800 mb-6 leading-snug">{title}</h3>
 
+                        <div className="text-base text-gray-500 leading-relaxed space-y-4 mb-8 whitespace-pre-line">
+                            {description}
+                        </div>
 
-          {about?.link && <div className=" pt-0">
-            <a
-              className="!font-medium !text-blue-gray-900 !transition-colors hover:!text-blue-500"
-              href={about?.link}
-            >
-              <button
-                className="flex select-none items-center gap-2 rounded-lg py-2 px-4 text-center align-middle font-sans text-xs font-bold uppercase text-blue-500 transition-all hover:bg-blue-500/10 active:bg-blue-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-                type="button"
-              >
-                {about?.linkTitle}
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth="2"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                  className="h-4 w-4"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
-                  ></path>
-                </svg>
-              </button>
-            </a>
-          </div>}
-          <p className="text-slate-600 whitespace-pre-line">{description}</p>
-        </div>
-      </div>
-    </div>
-  );
+                        {about?.link && (
+                            <a
+                                href={about?.link}
+                                className="inline-flex items-center gap-2 text-sm font-semibold text-slate-700 hover:text-slate-900 transition-colors group"
+                            >
+                                {about?.linkTitle}
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    strokeWidth="2"
+                                    stroke="currentColor"
+                                    className="h-4 w-4 transform group-hover:translate-x-1 transition-transform"
+                                >
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
+                                    ></path>
+                                </svg>
+                            </a>
+                        )}
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
 }

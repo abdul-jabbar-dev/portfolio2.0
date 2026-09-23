@@ -49,7 +49,7 @@ const Page = () => {
     };
 
     return (
-        <div className="2xl:xl-content container flex flex-col justify-center mx-auto mb-32">
+        <div className="container px-6 sm:px-12 flex flex-col justify-center mx-auto mb-32 max-w-lg">
             <div className="">
                 <div className="flex h-screen flex-col items-center justify-center">
                     <div className="max-h-auto mx-auto max-w-xl">

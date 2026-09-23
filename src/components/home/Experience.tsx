@@ -13,44 +13,45 @@ export default async function Experience() {
     console.error("Failed to fetch experience section:", err);
   }
 
-  return (
-    <div className="2xl:w-content container mx-auto my-24">
-      <h3 className="mb-3 text-blue-700">{"{ Web Dev Portfolio }"}</h3>
-      <h3 className="  mb-6 text-blue-800/50 text-5xl font-bold relative uppercase">
-        Experience
-      </h3>
+    return (
+        <section className="py-20">
+            <div className="container mx-auto px-6 sm:px-12 max-w-5xl">
+                <div className="mb-12">
+                    <h2 className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-2">My Journey</h2>
+                    <h3 className="text-2xl md:text-3xl font-medium text-slate-800">Experience</h3>
+                </div>
 
-      <div className="flex flex-col gap-y-12">
-        {experiences.length === 0 && (
-          <p className="text-gray-500 text-lg text-center">
-            No experience found.
-          </p>
-        )}
+                <div className="flex flex-col gap-y-12">
+                    {experiences.length === 0 && (
+                        <p className="text-gray-500 text-sm">
+                            No experience found.
+                        </p>
+                    )}
 
-        {experiences
-          .sort((a, b) => b.order - a.order)
-          .map((exp, i) => (
-            <div
-              className="flex border-b-[1px] md:pb-16 pb-8 gap-x-2 md:items-center items-start px-8 pr-0 md:flex-row flex-col justify-between"
-              key={i}
-            >
-              <div className="order-0 max-w-[320px] w-full">
-                <h2 className="text-3xl  text-slate-700">{exp.jobPosition}</h2>
-                <h2 className="text-md text-gray-800/80 font-normal mt-[6px] ">{exp.companyName}</h2>
-                <br />
-                <h3 className="text-xl w-fit order-1 md:order-2  text-slate-700">
-                  {exp.startDate} - {exp.endDate}
-                </h3>
-              </div>
-
-              <p className="text-lg  text-slate-700 whitespace-pre-line order-2 py-4 md:order-1  w-full font-normal md:py-0">
-                {exp.desc}
-              </p>
-
-
+                    {experiences
+                        .sort((a, b) => b.order - a.order)
+                        .map((exp, i) => (
+                            <div
+                                className="group relative border-l border-gray-200 pl-8 md:pl-12 py-2"
+                                key={i}
+                            >
+                                <div className="absolute w-3 h-3 bg-gray-200 rounded-full -left-[6.5px] top-4 group-hover:bg-slate-400 transition-colors duration-300"></div>
+                                
+                                <div className="flex flex-col md:flex-row md:items-baseline justify-between mb-2 gap-y-1">
+                                    <h4 className="text-lg font-semibold text-slate-800">{exp.jobPosition}</h4>
+                                    <span className="text-xs font-medium text-gray-400 uppercase tracking-wider">
+                                        {exp.startDate} - {exp.endDate}
+                                    </span>
+                                </div>
+                                <h5 className="text-sm font-medium text-slate-500 mb-4">{exp.companyName}</h5>
+                                
+                                <p className="text-base text-gray-500 leading-relaxed whitespace-pre-line font-light">
+                                    {exp.desc}
+                                </p>
+                            </div>
+                        ))}
+                </div>
             </div>
-          ))}
-      </div>
-    </div>
-  );
+        </section>
+    );
 }

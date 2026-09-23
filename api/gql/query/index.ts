@@ -6,6 +6,7 @@ import TECHNICAL_SKILLS from "./technicalSkills";
 import PROJECTS from "./projects";
 import FOOTER_SECTION_LINKS from "./footerSection";
 import GET_ME from "./getMe";
+import DOCUMENTS from "./documents";
 
 const Query = {
   SHORT_DYN_DES,
@@ -16,5 +17,6 @@ const Query = {
   PROJECTS,
   FOOTER_SECTION_LINKS,
   GET_ME,
+  DOCUMENTS,
 };
 export default Query;

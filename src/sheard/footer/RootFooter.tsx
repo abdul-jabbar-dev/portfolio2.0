@@ -24,9 +24,9 @@ const RootFooter = async ({ children }: { children: React.ReactNode }) => {
   return (
     <>
       {children}
-      <div className="py-16  bg-zinc-800">
-        <div className="2xl:w-content container mx-auto flex justify-between">
-          <h2 className="font-bold text-xl text-slate-300">
+      <div className="py-16 bg-zinc-800">
+        <div className="max-w-5xl px-6 sm:px-12 mx-auto flex flex-col md:flex-row items-center justify-between gap-y-6">
+          <h2 className="font-semibold text-lg text-slate-300 text-center md:text-left">
             Copyright © 2025. All rights are reserved
           </h2>
           <div className="flex gap-x-4">

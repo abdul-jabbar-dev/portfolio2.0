@@ -1,4 +1,5 @@
 import { GraphQLClient } from "graphql-request";
+import { getToken } from "@/utils/storage";
 import CONFIG from "@/config";
 
 const clientServer = new GraphQLClient(CONFIG.BACKEND_GRAPHQL_ENDPOINT, {
@@ -8,7 +9,7 @@ const clientServer = new GraphQLClient(CONFIG.BACKEND_GRAPHQL_ENDPOINT, {
     let token: string | null = null;
     try {
       if (typeof window !== "undefined") {
-        token = (await window.cookieStore.get("token"))?.value || localStorage.getItem("token")
+        token = getToken() || localStorage.getItem("token");
       } else {
         const { cookies } = await import("next/headers");
         const cookieStore = await cookies();
@@ -27,8 +28,8 @@ const clientServer = new GraphQLClient(CONFIG.BACKEND_GRAPHQL_ENDPOINT, {
       }
 
       if (token) {
-        headers.set("Cookie", `token=${token}`); 
-        headers.set("Authorization", `Bearer ${token}`); 
+        headers.set("Cookie", `token=${token}`);
+        headers.set("Authorization", `Bearer ${token}`);
       }
     } catch (error) {
       console.log("Error reading cookies in server component:", error);

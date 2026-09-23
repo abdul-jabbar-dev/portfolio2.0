@@ -80,84 +80,88 @@ const TechStackManager = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form onSubmit={handleSubmit} className="space-y-8">
             <div className="border-b border-gray-100 pb-4 flex justify-between items-center">
                 <div>
-                    <h2 className="text-2xl font-bold text-gray-800">Manage Tech Stack</h2>
-                    <p className="text-sm text-gray-500 mt-1">Add or update the technologies you use.</p>
+                    <h2 className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-gray-600">Manage Tech Stack</h2>
+                    <p className="text-sm font-medium text-gray-500 mt-2">Add or update the technologies you use.</p>
                 </div>
                 <button
                     type="button"
                     onClick={handleAdd}
-                    className="py-2 px-4 border border-transparent rounded-xl shadow-sm text-sm font-bold text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none transition-all"
+                    className="py-2.5 px-5 rounded-xl shadow-[0_4px_12px_rgb(79,70,229,0.2)] text-sm font-bold text-white bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 focus:outline-none hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300"
                 >
                     + Add Tech
                 </button>
             </div>
 
-            {message && <p className="text-green-600 bg-green-50 p-3 rounded-lg border border-green-200 font-medium">{message}</p>}
+            {message && (
+                <p className={`p-4 rounded-xl font-medium mt-4 ${message.includes('successfully') ? 'text-green-700 bg-green-50 border border-green-200 shadow-sm' : 'text-red-700 bg-red-50 border border-red-200 shadow-sm'}`}>
+                    {message}
+                </p>
+            )}
 
             <div className="space-y-6">
                 {techStack.map((tech, index) => (
-                    <div key={index} className="bg-gray-50 p-5 rounded-xl border border-gray-200 relative">
+                    <div key={index} className="bg-gray-50/50 p-6 rounded-3xl border border-gray-200 relative hover:shadow-lg hover:border-blue-100 transition-all duration-300">
                         <button
                             type="button"
                             onClick={() => handleRemove(index)}
-                            className="absolute top-4 right-4 text-red-500 hover:text-red-700 font-bold"
+                            className="absolute top-4 right-4 text-xs font-bold text-red-500 hover:text-red-700 bg-red-50 hover:bg-red-100 px-3 py-1.5 rounded-lg transition-colors"
                         >
                             Remove
                         </button>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
-                            <div>
-                                <label className="block text-sm font-semibold text-gray-700">Title</label>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+                            <div className="space-y-2">
+                                <label className="block text-sm font-bold text-gray-700 tracking-wide">Title</label>
                                 <input
                                     type="text"
                                     value={tech.title}
                                     onChange={(e) => handleChange(index, 'title', e.target.value)}
-                                    className="mt-1 block w-full bg-white border border-gray-200 rounded-lg shadow-sm py-2 px-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 sm:text-sm"
+                                    className="block w-full bg-white border border-gray-200 rounded-2xl shadow-sm py-3 px-4 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500/40 focus:border-blue-500 transition-all duration-300 sm:text-sm"
                                     required
                                 />
                             </div>
-                            <div>
-                                <label className="block text-sm font-semibold text-gray-700">URL</label>
+                            <div className="space-y-2">
+                                <label className="block text-sm font-bold text-gray-700 tracking-wide">URL</label>
                                 <input
                                     type="text"
                                     value={tech.url}
                                     onChange={(e) => handleChange(index, 'url', e.target.value)}
-                                    className="mt-1 block w-full bg-white border border-gray-200 rounded-lg shadow-sm py-2 px-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 sm:text-sm"
+                                    className="block w-full bg-white border border-gray-200 rounded-2xl shadow-sm py-3 px-4 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500/40 focus:border-blue-500 transition-all duration-300 sm:text-sm"
                                     required
                                 />
                             </div>
-                            <div>
-                                <label className="block text-sm font-semibold text-gray-700">Icon URL</label>
+                            <div className="space-y-2">
+                                <label className="block text-sm font-bold text-gray-700 tracking-wide">Icon URL</label>
                                 <input
                                     type="text"
                                     value={tech.icon}
                                     onChange={(e) => handleChange(index, 'icon', e.target.value)}
-                                    className="mt-1 block w-full bg-white border border-gray-200 rounded-lg shadow-sm py-2 px-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 sm:text-sm"
+                                    className="block w-full bg-white border border-gray-200 rounded-2xl shadow-sm py-3 px-4 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500/40 focus:border-blue-500 transition-all duration-300 sm:text-sm"
                                     required
                                 />
                             </div>
-                            <div>
-                                <label className="block text-sm font-semibold text-gray-700">Description (Optional)</label>
+                            <div className="space-y-2">
+                                <label className="block text-sm font-bold text-gray-700 tracking-wide">Description (Optional)</label>
                                 <input
                                     type="text"
                                     value={tech.desc}
                                     onChange={(e) => handleChange(index, 'desc', e.target.value)}
-                                    className="mt-1 block w-full bg-white border border-gray-200 rounded-lg shadow-sm py-2 px-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 sm:text-sm"
+                                    className="block w-full bg-white border border-gray-200 rounded-2xl shadow-sm py-3 px-4 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500/40 focus:border-blue-500 transition-all duration-300 sm:text-sm"
                                 />
                             </div>
                         </div>
                     </div>
                 ))}
-                {techStack.length === 0 && <p className="text-gray-500 text-center py-4">No technologies added yet.</p>}
+                {techStack.length === 0 && <p className="text-gray-500 text-center py-8 font-medium">No technologies added yet.</p>}
             </div>
 
-            <div className="pt-4 border-t border-gray-100">
+            <div className="pt-6 border-t border-gray-100">
                 <button
                     type="submit"
                     disabled={loading}
-                    className="w-full flex justify-center py-3 px-4 border border-transparent rounded-xl shadow-sm text-sm font-bold text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:bg-blue-400 transition-all"
+                    className="w-full flex justify-center py-4 px-6 rounded-2xl shadow-[0_8px_20px_rgb(37,99,235,0.2)] text-sm font-bold text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300"
                 >
                     {loading ? 'Saving...' : 'Save All Tech Stack'}
                 </button>

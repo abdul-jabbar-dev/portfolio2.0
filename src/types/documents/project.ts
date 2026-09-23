@@ -17,5 +17,6 @@ export interface TProject {
   img: string;
   projectTools: string[];
   techStack: TechStack[];
+  order: number;
 }
 export default TProject

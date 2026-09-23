@@ -65,70 +65,76 @@ const AboutForm = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <div className="space-y-8">
             <div className="border-b border-gray-100 pb-4">
-                <h2 className="text-2xl font-bold text-gray-800">Update About Section</h2>
-                <p className="text-sm text-gray-500 mt-1">Manage the content for your personal about area.</p>
+                <h2 className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-gray-600">Update About Section</h2>
+                <p className="text-sm font-medium text-gray-500 mt-2">Manage the content for your personal about area.</p>
             </div>
 
-            {message && <p className="text-green-600 bg-green-50 p-3 rounded-lg border border-green-200 font-medium">{message}</p>}
+            {message && (
+                <p className={`p-4 rounded-xl font-medium mt-4 ${message.includes('successfully') ? 'text-green-700 bg-green-50 border border-green-200 shadow-sm' : 'text-red-700 bg-red-50 border border-red-200 shadow-sm'}`}>
+                    {message}
+                </p>
+            )}
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                    <label className="block text-sm font-semibold text-gray-700">Title</label>
-                    <input
-                        type="text"
-                        value={title}
-                        onChange={(e) => setTitle(e.target.value)}
-                        className="mt-2 block w-full bg-white border border-gray-200 rounded-xl shadow-sm py-3 px-4 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all sm:text-sm"
+            <form onSubmit={handleSubmit} className="mt-8 space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                        <label className="block text-sm font-bold text-gray-700 tracking-wide">Title</label>
+                        <input
+                            type="text"
+                            value={title}
+                            onChange={(e) => setTitle(e.target.value)}
+                            className="block w-full bg-gray-50/50 border border-gray-200 rounded-2xl shadow-sm py-3.5 px-5 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500/40 focus:border-blue-500 focus:bg-white transition-all duration-300 sm:text-sm"
+                            required
+                        />
+                    </div>
+                </div>
+
+                <div className="space-y-2">
+                    <label className="block text-sm font-bold text-gray-700 tracking-wide">Full Description</label>
+                    <textarea
+                        value={desc}
+                        onChange={(e) => setDesc(e.target.value)}
+                        rows={5}
+                        className="block w-full bg-gray-50/50 border border-gray-200 rounded-2xl shadow-sm py-3.5 px-5 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500/40 focus:border-blue-500 focus:bg-white transition-all duration-300 sm:text-sm resize-none"
                         required
                     />
-                </div> 
-            </div>
-
-            <div>
-                <label className="block text-sm font-semibold text-gray-700">Full Description</label>
-                <textarea
-                    value={desc}
-                    onChange={(e) => setDesc(e.target.value)}
-                    rows={5}
-                    className="mt-2 block w-full bg-white border border-gray-200 rounded-xl shadow-sm py-3 px-4 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all sm:text-sm"
-                    required
-                />
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                    <label className="block text-sm font-semibold text-gray-700">Button Link URL</label>
-                    <input
-                        type="text"
-                        value={link}
-                        onChange={(e) => setLink(e.target.value)}
-                        className="mt-2 block w-full bg-white border border-gray-200 rounded-xl shadow-sm py-3 px-4 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all sm:text-sm"
-                    />
                 </div>
 
-                <div>
-                    <label className="block text-sm font-semibold text-gray-700">Button Link Title</label>
-                    <input
-                        type="text"
-                        value={linkTitle}
-                        onChange={(e) => setLinkTitle(e.target.value)}
-                        className="mt-2 block w-full bg-white border border-gray-200 rounded-xl shadow-sm py-3 px-4 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all sm:text-sm"
-                    />
-                </div>
-            </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                        <label className="block text-sm font-bold text-gray-700 tracking-wide">Button Link URL</label>
+                        <input
+                            type="text"
+                            value={link}
+                            onChange={(e) => setLink(e.target.value)}
+                            className="block w-full bg-gray-50/50 border border-gray-200 rounded-2xl shadow-sm py-3.5 px-5 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500/40 focus:border-blue-500 focus:bg-white transition-all duration-300 sm:text-sm"
+                        />
+                    </div>
 
-            <div className="pt-2">
-                <button
-                    type="submit"
-                    disabled={loading}
-                    className="w-full flex justify-center py-3 px-4 border border-transparent rounded-xl shadow-sm text-sm font-bold text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:bg-blue-400 transition-all"
-                >
-                    {loading ? 'Saving...' : 'Save Changes'}
-                </button>
-            </div>
-        </form>
+                    <div className="space-y-2">
+                        <label className="block text-sm font-bold text-gray-700 tracking-wide">Button Link Title</label>
+                        <input
+                            type="text"
+                            value={linkTitle}
+                            onChange={(e) => setLinkTitle(e.target.value)}
+                            className="block w-full bg-gray-50/50 border border-gray-200 rounded-2xl shadow-sm py-3.5 px-5 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500/40 focus:border-blue-500 focus:bg-white transition-all duration-300 sm:text-sm"
+                        />
+                    </div>
+                </div>
+
+                <div className="pt-6">
+                    <button
+                        type="submit"
+                        disabled={loading}
+                        className="w-full flex justify-center py-4 px-6 rounded-2xl shadow-[0_8px_20px_rgb(37,99,235,0.2)] text-sm font-bold text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300"
+                    >
+                        {loading ? 'Saving...' : 'Save Changes'}
+                    </button>
+                </div>
+            </form>
+        </div>
     );
 };
 
