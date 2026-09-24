@@ -1,6 +1,7 @@
 import TProject from "@/types/documents/project";
 import React from "react";
 import Project from "./Project";
+import ProjectList from "./ProjectList";
 import clientServer from "@/lib/apolloClient";
 import API from "../../../api/gql";
 
@@ -21,11 +22,7 @@ export default async function Projects() {
                     <h3 className="text-2xl md:text-3xl font-medium text-slate-800">Projects</h3>
                 </div>
 
-                <div className="flex flex-col gap-y-16">
-                    {projectList.sort((a, b) => b.order - a.order).map((project, i) => (
-                        <Project key={i} project={project} index={i} />
-                    ))}
-                </div>
+                <ProjectList projects={projectList} />
             </div>
         </section>
     );
